@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>Areleo</title>
+<!-- custom-theme -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //custom-theme -->
+<link href="/demos/cargo/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Owl-carousel-CSS -->
+<link href="/demos/cargo/css/owl.carousel.css" rel="stylesheet">
+<link href="/demos/cargo/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- font-awesome-icons -->
+<link href="/demos/cargo/css/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome-icons -->
+<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,900" rel="stylesheet">
+  
+  <link rel="shortcut icon" href="/demos/logo.png">
+  <style>
+  body {
+    color: #f3eded;
+  }
+  </style>
+  
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
+
+  
+</head>
+<body>
+<!-- banner -->
+<div class="main_section_agile">
+		<div class="agileits_w3layouts_banner_nav">
+		   
+			<nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				<h1><a class="navbar-brand" href="/demos/Video-Conferencing.html"><i class="fa fa-plane" aria-hidden="true"></i> Areleo<span>For conference</span></a></h1>
+
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-2" id="link-effect-2">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="index.html" class="effect-3">Home</a></li>
+							<li><a href="/rtc" class="effect-3">Rtc</a></li>
+							<li><a href="/demos/record.html" class="effect-3">Rtc record</a></li>
+							<li><a href="/demos/Smartglases.html" class="effect-3">Drawing</a></li>
+							<li><a href="mail.html" class="effect-3">Mail Us</a></li>
+						</ul>
+					</nav>
+
+				</div>
+			</nav>	
+<div class="clearfix"> </div> 
+		</div>
+</div>
+<!-- //banner-bottom -->
+
+
+
+
+
+
+
+<!-- footer -->
+	<div class="footer">
+		<div class="container">
+		<div class="clearfix"> </div>
+		
+			<div class="w3_agile_footer_grids">
+				<div class="col-md-2 w3_agile_footer_grid">
+				</div>
+				<div class="col-md-8 w3_agile_footer_grid">
+					
+					<div class="signin-form profile">
+					<h2 id="demo"></h2>
+					
+				  <table id="location1" class="table">
+					<thead>
+					  <tr align ="center">
+						<th>NAMA</th>
+						<th>TELEPHONE</th>
+						<th>ALAMAT</th>
+					  </tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+				  </table>
+
+				<input type="text" id="callaudio" >
+				<p id="textcalling"></p>
+
+    <input type="hidden" id="room-id" value="abcdef" autocorrect=off autocapitalize=off size=20>
+    <button style="color: #272222;" id="open-room">Open Room</button>
+    <button style="color: #272222;" id="join-room">Join Room</button>
+    <div style="color: #272222;" id="open-or-join-room"></div>
+
+    <div id="room-urls" ></div>
+
+    <div id="videos-container"></div>
+  
+
+<script src="dist/RTCMultiConnection.min.js"></script>
+<script src="dev/adapter.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+
+<!-- custom layout for HTML5 audio/video elements -->
+<link rel="stylesheet" href="/dev/getHTMLMediaElement.css">
+<script src="/dev/getHTMLMediaElement.js"></script>
+<script>
+//fungsi java biasa
+function myFunction(data) {
+    document.getElementById("callaudio").value = data;
+	document.getElementById("open-room").style.visibility = "visible";
+}
+document.getElementById("open-room").style.visibility = "hidden";
+document.getElementById("join-room").style.visibility = "hidden";
+
+
+
+
+$(document).ready(function(){
+   
+  
+	var socket = io.connect();
+	var $message = "Server is ready  ";
+	
+	socket.emit('send message', $message);
+		socket.on('new message', function(data){
+		document.getElementById('demo').innerHTML = data;
+		}); 
+		
+	socket.on('caller', function(data){
+  
+		//document.getElementById('open-room').style.visibility = 'hidden';
+
+        $.ajax({url: "/id_user", success: function(result){
+		console.log(result.message);
+
+		console.log(data[1]);
+		
+		if(data[1] == result.message){
+		
+		document.getElementById("textcalling").innerHTML = data[0]+" calling...!";
+		
+		var audio = new Audio('/audio');
+		audio.play();
+  //document.getElementById('open-room').style.visibility = 'visible';
+		console.log(data[1]);
+		document.getElementById("join-room").style.visibility = "visible";
+		
+		}
+
+        }});
+
+		});
+   
+        $.ajax({url: "/id_user", success: function(result){
+		console.log(result);
+
+			$.each(result, function(k, field){
+			
+					document.getElementById('room-id').value = field;  
+					
+            });	
+				
+        }});
+    
+        $.ajax({url: "/readadmin", success: function(result){
+		console.log(result);
+
+		$.each(result, function(i, j){
+		
+			$.each(j, function(k, field){
+			if(k == "_id"){console.log(field);}
+			else if(k == "ADDRESS"){
+			        $("#location1 tbody").append(
+					'<tr>'
+					+''
+					+field 
+					+''
+					);
+			}
+			else if(k == "NAME"){
+				data = "'" +field+ "'";
+			
+                $("#location1 tbody").append(
+					'<td>'					 
+					+'<button style ="color:#380606"onclick="myFunction('+data+')">'+field+'</button></td>'
+					);
+				//console.log(field);
+			}else{
+			
+			
+                $("#location1 tbody").append(
+					"<td>"
+					+field 
+					+"</td>"
+					+"</tr>"
+					);
+				//console.log(field);
+			}	
+			
+				
+            });	
+				
+        });
+
+        }});
+		
+
+// ......................................................
+// .......................UI Code........................
+// ......................................................
+document.getElementById('open-room').onclick = function() {
+    disableInputButtons();
+    connection.open(document.getElementById('room-id').value, function() {
+        showRoomURL(connection.sessionid);
+    });
+	
+	    datacall = document.getElementById("room-id").value;
+		
+		datacallnm = document.getElementById("callaudio").value;
+	
+	socket.emit('call', [datacall,datacallnm]);
+	
+};
+
+document.getElementById('join-room').onclick = function() {
+    disableInputButtons();
+    connection.join(document.getElementById('room-id').value);
+};
+
+document.getElementById('open-or-join-room').onclick = function() {
+    disableInputButtons();
+    connection.openOrJoin(document.getElementById('room-id').value, function(isRoomExist, roomid) {
+        if (!isRoomExist) {
+            showRoomURL(roomid);
+        }
+    });
+};
+
+// ......................................................
+// ..................RTCMultiConnection Code.............
+// ......................................................
+
+var connection = new RTCMultiConnection();
+
+// by default, socket.io server is assumed to be deployed on your own URL
+connection.socketURL = '/';
+
+// comment-out below line if you do not have your own socket.io server
+// connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
+
+connection.socketMessageEvent = 'video-conference-demo';
+
+connection.session = {
+    audio: true,
+    video: true
+};
+
+connection.sdpConstraints.mandatory = {
+    OfferToReceiveAudio: true,
+    OfferToReceiveVideo: true
+};
+
+connection.videosContainer = document.getElementById('videos-container');
+connection.onstream = function(event) {
+    var width = parseInt(connection.videosContainer.clientWidth / 2) - 20;
+    var mediaElement = getHTMLMediaElement(event.mediaElement, {
+        title: event.userid,
+        buttons: ['full-screen'],
+        width: width,
+        showOnMouseEnter: false
+    });
+
+    connection.videosContainer.appendChild(mediaElement);
+
+    setTimeout(function() {
+        mediaElement.media.play();
+    }, 5000);
+
+    mediaElement.id = event.streamid;
+};
+
+connection.onstreamended = function(event) {
+    var mediaElement = document.getElementById(event.streamid);
+    if (mediaElement) {
+        mediaElement.parentNode.removeChild(mediaElement);
+    }
+};
+
+function disableInputButtons() {
+    document.getElementById('open-or-join-room').disabled = true;
+    document.getElementById('open-room').disabled = true;
+    document.getElementById('join-room').disabled = true;
+    document.getElementById('room-id').disabled = true;
+}
+
+// ......................................................
+// ......................Handling Room-ID................
+// ......................................................
+
+function showRoomURL(roomid) {
+    var roomHashURL = '#' + roomid;
+    var roomQueryStringURL = '?roomid=' + roomid;
+
+    var html = roomid;
+
+    var roomURLsDiv = document.getElementById('room-urls');
+    roomURLsDiv.innerHTML = html;
+
+    roomURLsDiv.style.display = 'block';
+}
+
+(function() {
+    var params = {},
+        r = /([^&=]+)=?([^&]*)/g;
+
+    function d(s) {
+        return decodeURIComponent(s.replace(/\+/g, ' '));
+    }
+    var match, search = window.location.search;
+    while (match = r.exec(search.substring(1)))
+        params[d(match[1])] = d(match[2]);
+    window.params = params;
+})();
+
+var roomid = '';
+if (localStorage.getItem(connection.socketMessageEvent)) {
+    roomid = localStorage.getItem(connection.socketMessageEvent);
+} else {
+    roomid = connection.token();
+}
+document.getElementById('room-id').value = roomid;
+document.getElementById('room-id').onkeyup = function() {
+    localStorage.setItem(connection.socketMessageEvent, this.value);
+};
+
+var hashString = location.hash.replace('#', '');
+if (hashString.length && hashString.indexOf('comment-') == 0) {
+    hashString = '';
+}
+
+var roomid = params.roomid;
+if (!roomid && hashString.length) {
+    roomid = hashString;
+}
+
+if (roomid && roomid.length) {
+    document.getElementById('room-id').value = roomid;
+    localStorage.setItem(connection.socketMessageEvent, roomid);
+
+    // auto-join-room
+    (function reCheckRoomPresence() {
+        connection.checkPresence(roomid, function(isRoomExist) {
+            if (isRoomExist) {
+                connection.join(roomid);
+                return;
+            }
+
+            setTimeout(reCheckRoomPresence, 5000);
+        });
+    })();
+
+    disableInputButtons();
+}
+
+});
+</script>
+					</div>
+				</div>
+				<div class="col-md-2 w3_agile_footer_grid">
+										
+  
+
+  
+  
+				</div>
+
+				<div class="clearfix"> </div>
+			</div>
+			<div class="w3_newsletter_footer_grids">
+				<div class="w3_newsletter_footer_grid_left">
+					
+				</div>
+			</div>
+			<div class="w3ls_address_mail_footer_grids">
+				<div class="col-md-4 w3ls_footer_grid_left">
+					<div class="wthree_footer_grid_left">
+						<i class="fa fa-map-marker" aria-hidden="true"></i>
+					</div>
+					<p>3481 Melrose Place, Beverly Hills, <span>New York City 90210.</span></p>
+				</div>
+				<div class="col-md-4 w3ls_footer_grid_left">
+					<div class="wthree_footer_grid_left">
+						<i class="fa fa-phone" aria-hidden="true"></i>
+					</div>
+					<p>+(000) 123 4565 32 <span>+(010) 123 4565 35</span></p>
+				</div>
+				<div class="col-md-4 w3ls_footer_grid_left">
+					<div class="wthree_footer_grid_left">
+						<i class="fa fa-envelope-o" aria-hidden="true"></i>
+					</div>
+					<p><a href="mailto:info@example.com">info@example1.com</a> 
+						<span><a href="mailto:info@example.com">info@example2.com</a></span></p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="agileinfo_copyright">
+				<p>© 2017 Move Cargo. All Rights Reserved | Design by <a href="https://w3layouts.com/">W3layouts</a></p>
+			</div>
+		</div>
+	</div>
+<!-- //footer -->
+
+
+<!-- //here ends scrolling icon -->
+</body>
+</html>

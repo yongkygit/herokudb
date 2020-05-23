@@ -1,0 +1,51 @@
+<head>
+
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</head>
+<body>
+test
+<div class="contador"> </div>
+<div id="canvasDiv"></div>
+		<h2 id="demo"></h2>
+		<h2 id="demo1"></h2>
+		<h3 id="demo2"></h3>
+		<!--<div id="pizarra" style= "margin:0 auto;width:500px;height:500px;background:#ff1a1a;"></div>-->
+		
+		 <canvas id="canvas" width="400" height="300"
+    style="border: 1px #000 solid;"></canvas>
+	
+	 <input type="text" id="searchTxt"><br>
+	 <button onclick="myFunction()">Click me</button> <br>
+	 <p id="textcalling"></p>
+	
+	
+	
+<script>
+var socket = io.connect();
+
+function myFunction() {
+    data = document.getElementById("searchTxt").value;
+	
+	socket.emit('call', data);
+	
+		
+}
+
+
+
+  socket.on('caller', function(data){
+
+		document.getElementById("textcalling").innerHTML = data;
+		
+		var audio = new Audio('/audio');
+audio.play();
+  
+		console.log(data);	
+		});
+
+
+
+</script>
+</body>

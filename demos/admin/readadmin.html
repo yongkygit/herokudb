@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <title>Simple login</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
+<script>
+$(document).ready(function(){
+   
+        $.ajax({url: "/readadmin", success: function(result){
+		console.log(result);
+		
+		/*for (var i=0; i<result.length; i++) {		
+		$.each(result[i], function(i, field){				
+			if(i == "_id"){console.log(field);}
+			else{
+                $("#div1").append(
+					"<tr>"
+					+"<td>"
+					+field   
+					+"</td>"
+					+"</tr>");
+				//console.log(field);
+			}					
+            });
+		}*/
+
+		$.each(result, function(i, j){
+		
+		
+			$.each(j, function(k, field){
+			if(k == "_id"){console.log(field);}
+			else{
+                $("#location tbody tr").append(
+					field 
+					
+					);
+				//console.log(field);
+			}	
+				
+            });	
+				
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+                	
+
+        }});
+    
+});
+</script>
+  </head>
+  <body>
+    <div id="div1"></div>
+<table id="location" border='1'>
+    <tr>
+        <th>Countries</th>
+         <th>Cities</th>
+    </tr>
+	
+</table>
+  </body>
+</html>

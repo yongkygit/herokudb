@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Simple login</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        var NAME,PASSWORD,ADDRESS;
+        $("#submit").click(function(){
+          NAME=$("#NAME").val();
+          PASSWORD=$("#PASSWORD").val();
+		  ADDRESS=$("#ADDRESS").val();
+  
+  
+ $.post( "http://localhost:9001/createuseradmin", {NAME: NAME,PASSWORD: PASSWORD,ADDRESS: ADDRESS})
+  .done(function( data ) {
+    alert( "Data Loaded: " + data );
+  }); 
+  
+  
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Hello people !</h1>
+    <input type="text" id="NAME" size="40"><br>
+    <input type="text" id="PASSWORD" size="40"><br>
+	<input type="text" id="ADDRESS" size="40"><br>
+    <input type="button" id="submit" value="Submit">
+  </body>
+</html>
