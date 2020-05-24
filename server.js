@@ -13,7 +13,7 @@ var MongoClient = require('mongodb').MongoClient;
 	var urldb = "mongodb+srv://mongodbtest123:lN6bDqo4vy2fXKtS@cluster0-osrar.mongodb.net/test?retryWrites=true&w=majority";
 	//var urldb = "mongodb://db_test:12345@ds127564.mlab.com:27564/db_test";
 	
-	
+	//test
 	app.use(session({secret:"hsad7378236sa8*7s7ssjjsh",resave:false,saveUninitialized:true}));
 
 function resolveURL(url) {
