@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/areleo/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/areleo/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/areleo/js/tether.min.js"></script>
+    <script src="/areleo/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        var NAME,PASSWORD,ADDRESS;
+        $("#submit").click(function(){
+          NAME=$("#NAME").val();
+          PASSWORD=$("#PASSWORD").val();
+		  ADDRESS=$("#ADDRESS").val();
+  
+  
+ $.post( "http://localhost:9001/newuser", {NAME: NAME,PASSWORD: PASSWORD,ADDRESS: ADDRESS})
+  .done(function( data ) {
+    alert( "Data Loaded: " + data );
+  }); 
+  
+	 alert( "Save data success" );
+	 window.location.assign("/rtc")
+        });
+      });
+    </script>	
+ 
+ </head>
+  <body>
+<div class="container">
+  <nav class="navbar navbar-toggleable-md navbar-light navbar-head">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="/"><img src="/areleo/images/logo_areleo.png" width="35px" height = "35px"alt="Areleo"></a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/rtc">Rtc</a>
+      </li>	  
+      <li class="nav-item">
+        <a class="nav-link" href="/visualassistant">Visual Assistant</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/chatsharing">Chat Sharing</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</div>
+
+
+
+<div class="menu-areleo-main"> 
+<div class="container">
+  <div class="row">
+    <div class="col col-sm-1 col-md-2 col-lg-4">
+      
+    </div>
+    <div class="col col-sm-10 col-md-8 col-lg-4">
+
+					<h2 class="h1-inp">New user</h2>	
+						
+							<div class="form-group">
+							   <input type="text" id="NAME" class="input-fa" placeholder="Name">
+							</div>
+							<div class="form-group">
+							   <input type="text" id="PASSWORD" class="input-fa" placeholder="Password">
+							</div>
+							<div class="form-group">
+							   <input type="text" id="ADDRESS" class="input-fa" placeholder="Address">
+							</div>
+							<div class="button-inp-log">
+							<input type="button" class="btn button-inp" id="submit" value="Submit">
+							</div>
+						
+
+
+    </div>
+    <div class="col col-sm-1 col-md-2 col-lg-4">
+      
+    </div>
+  </div>
+</div> 
+</div>
+<div class="menu-areleo-footer"> 
+<div class="container">
+  <div class="row">
+    <div class="col col-lg-4">
+	<div class="footer_griph">
+    <i class="fa fa-map-marker"></i>
+    </div>
+	<div class="footer-center">
+	<p>Pusat Bisnis Thamrin City, Lt. 7 <span>JI. Thamrin Boulevard (Kebon Kacang Raya)</span><span>Jakarta Pusat 10230 Indonesia</span></p>
+	</div>
+	</div>
+    <div class="col col-lg-4">
+	
+	<div class="footer_griph">
+    <i class="fa fa-phone-square"></i>
+    </div>
+	<div class="footer-center">
+	<p>Phone:+62 21 29558688  <span>Fax: +62 21 2955 8690</span></p>
+	</div>
+    </div>
+    <div class="col col-lg-4">
+    <div class="footer_griph">
+    <i class="fa fa-envelope-o"></i>
+    </div> 
+	<div class="footer-center">
+	<p><a href="mailto:support@areleo.com">support@areleo.com</a></p>
+	</div>	
+    </div>
+  </div>
+</div>
+</div>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

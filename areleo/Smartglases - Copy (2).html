@@ -1,0 +1,605 @@
+<!-- Demo version: 2017.08.06 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <link href="/demos/cargo/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Owl-carousel-CSS -->
+<link href="/demos/cargo/css/owl.carousel.css" rel="stylesheet">
+<link href="/demos/cargo/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- font-awesome-icons -->
+<link href="/demos/cargo/css/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome-icons -->
+<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,900" rel="stylesheet">
+  
+  <link rel="shortcut icon" href="/demos/logo.png">
+  <style>
+  body {
+    color: #f3eded;
+  }
+  </style>
+	
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <title>Drawing</title>
+
+    <meta name="description" content="Many-to-Many TextChat and FileSharing using RTCMultiConnection" />
+    <meta name="keywords" content="WebRTC,RTCMultiConnection,Demos,Experiments,Samples,Examples" />
+
+    <style>
+        video {
+            object-fit: fill;
+            width: 30%;
+        }
+        button,
+        input,
+        select {
+            font-weight: normal;
+            padding: 2px 4px;
+            text-decoration: none;
+            display: inline-block;
+            text-shadow: none;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .make-center {
+            text-align: center;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- banner -->
+<div class="main_section_agile">
+		<div class="agileits_w3layouts_banner_nav">
+		   
+			<nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				<h1><a class="navbar-brand" href="/demos/Video-Conferencing.html"><i class="fa fa-plane" aria-hidden="true"></i> Areleo<span>For conference</span></a></h1>
+
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-2" id="link-effect-2">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="index.html" class="effect-3">Home</a></li>
+							<li><a href="/rtc" class="effect-3">Rtc</a></li>
+							<li><a href="/demos/record.html" class="effect-3">Rtc record</a></li>
+							<li><a href="/demos/Smartglases.html" class="effect-3">Drawing</a></li>
+							<li><a href="mail.html" class="effect-3">Mail Us</a></li>
+						</ul>
+					</nav>
+
+				</div>
+			</nav>	
+<div class="clearfix"> </div> 
+		</div>
+</div>
+<!-- //banner-bottom -->
+
+
+
+
+
+
+
+<!-- footer -->
+	<div class="footer">
+		<div class="container">
+		<div class="clearfix"> </div>
+		
+			<div class="w3_agile_footer_grids">
+				<div class="col-md-2 w3_agile_footer_grid">
+				</div>
+				<div class="col-md-8 ">
+					
+					<div>
+					
+	    <article>
+
+
+
+
+
+        <section class="experiment">
+            <div class="make-center">
+                <input type="text" id="room-id" value="abcdef">
+                <button style="color: #272222;" id="open-room">Open Room</button>
+                <button style="color: #272222;" id="join-room">Join Room</button>
+                <div id="open-or-join-room"></div>
+
+                <br><br>
+                <input type="text" id="input-text-chat" placeholder="Enter Text Chat" disabled>
+                <div id="share-file" disabled></div>
+
+                <div id="room-urls" style="text-align: center;display: none;background: #F1EDED;margin: 15px -10px;border: 1px solid rgb(189, 189, 189);border-left: 0;border-right: 0;"></div>
+            </div>
+
+            <div id="chat-container">
+                <div id="file-container"></div>
+                <div class="chat-output"></div>
+            </div>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			
+        </section>
+<img style="width:500px;height:500px;" id="smallImage" src="" />
+			<div id="canvasDiv" style ="background-color:rgba(0, 0, 0, 0); margin-top: -21px; border: 1px solid rgb(50, 50, 50);" ></div>
+    </article>  				
+					
+					
+					</div>
+				</div>
+				<div class="col-md-2 w3_agile_footer_grid">
+										
+  
+
+  
+				</div>
+
+				<div class="clearfix"> </div>
+			</div>
+			<div class="w3_newsletter_footer_grids">
+				<div class="w3_newsletter_footer_grid_left">
+					
+				</div>
+			</div>
+			<div class="w3ls_address_mail_footer_grids">
+				<div class="col-md-4 w3ls_footer_grid_left">
+					<div class="wthree_footer_grid_left">
+						<i class="fa fa-map-marker" aria-hidden="true"></i>
+					</div>
+					<p>3481 Melrose Place, Beverly Hills, <span>New York City 90210.</span></p>
+				</div>
+				<div class="col-md-4 w3ls_footer_grid_left">
+					<div class="wthree_footer_grid_left">
+						<i class="fa fa-phone" aria-hidden="true"></i>
+					</div>
+					<p>+(000) 123 4565 32 <span>+(010) 123 4565 35</span></p>
+				</div>
+				<div class="col-md-4 w3ls_footer_grid_left">
+					<div class="wthree_footer_grid_left">
+						<i class="fa fa-envelope-o" aria-hidden="true"></i>
+					</div>
+					<p><a href="mailto:info@example.com">info@example1.com</a> 
+						<span><a href="mailto:info@example.com">info@example2.com</a></span></p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="agileinfo_copyright">
+				<p>© 2017 Move Cargo. All Rights Reserved | Design by <a href="https://w3layouts.com/">W3layouts</a></p>
+			</div>
+		</div>
+	</div>
+<!-- //footer -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script src="/dist/RTCMultiConnection.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+
+        <script src="https://cdn.webrtc-experiment.com:443/FileBufferReader.js"></script>
+
+        <script>
+            // ......................................................
+            // .......................UI Code........................
+            // ......................................................
+
+            document.getElementById('open-room').onclick = function() {
+                disableInputButtons();
+                connection.open(document.getElementById('room-id').value, function() {
+                    showRoomURL(connection.sessionid);
+                });
+            };
+
+            document.getElementById('join-room').onclick = function() {
+                disableInputButtons();
+                connection.join(document.getElementById('room-id').value);
+            };
+
+            document.getElementById('open-or-join-room').onclick = function() {
+                disableInputButtons();
+                connection.openOrJoin(document.getElementById('room-id').value, function(isRoomExists, roomid) {
+                    if(!isRoomExists) {
+                        showRoomURL(roomid);
+                    }
+                });
+            };
+
+            // ......................................................
+            // ................FileSharing/TextChat Code.............
+            // ......................................................
+
+            document.getElementById('share-file').onclick = function() {
+                var fileSelector = new FileSelector();
+                fileSelector.selectSingleFile(function(file) {
+                    connection.send(file);
+                });
+            };
+
+			
+			
+			
+			
+			
+var canvasDiv = document.getElementById('canvasDiv');
+canvas = document.createElement('canvas');
+canvas.setAttribute('width', 500);
+canvas.setAttribute('height', 500);
+canvas.setAttribute('id', 'canvas');
+canvas.setAttribute('style', 'background-color:rgba(0, 0, 0, 0); margin-top: -500px; border: 1px solid rgb(50, 50, 50);');
+canvasDiv.appendChild(canvas);
+if(typeof G_vmlCanvasManager != 'undefined') {
+	canvas = G_vmlCanvasManager.initElement(canvas);
+}
+context = canvas.getContext("2d");
+
+$('#canvas').mousedown(function(e){
+  var mouseX = e.pageX - this.offsetLeft;
+  var mouseY = e.pageY - this.offsetTop;
+		
+  paint = true;
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop);
+  /*socket.on('update', function(data){		
+		document.getElementById('demo2').innerHTML = data;		
+		addClickemit(data);		
+		});*/
+  //redraw();
+});
+
+$('#canvas').mousemove(function(e){
+  if(paint){
+    addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
+  /*socket.on('update', function(data){		
+		document.getElementById('demo2').innerHTML = data;		
+		addClickemit(data);		
+		});*/	
+   // redraw();
+  }
+});
+
+$('#canvas').mouseup(function(e){
+  paint = false;
+});
+
+$('#canvas').mouseleave(function(e){
+  paint = false;
+});
+
+var clickX = new Array();
+var clickY = new Array();
+var clickDrag = new Array();
+var paint;
+
+function addClick(x, y, dragging)
+{
+//socket.emit('draw',[x, y, dragging]);
+
+
+connection.send([x, y, dragging]);
+appendDIV([x, y, dragging]);
+
+}
+
+
+
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+            document.getElementById('input-text-chat').onkeyup = function(e) {
+
+
+
+
+                
+
+            };
+
+            var chatContainer = document.querySelector('.chat-output');
+
+            function appendDIV(event) {
+			
+			
+			console.log(event);
+			
+                if(event.data){
+				
+				for(var i=0;i<event.data.length;i++){
+
+  clickX.push(event.data[0]);
+  clickY.push(event.data[1]);
+  clickDrag.push(event.data[2]);
+  
+  
+  
+  		if(event.data[3]){
+			
+			
+  
+  		      // Get image handle
+      //
+      var smallImage = document.getElementById('smallImage');
+
+      // Unhide image elements
+      //
+      smallImage.style.display = 'block';
+
+      // Show the captured photo
+      // The inline CSS rules are used to resize the image
+      //
+      smallImage.src = "data:image/jpeg;base64," + event.data[3];
+		
+//document.getElementById('demo').innerHTML = text;
+  
+  
+		}
+  
+  
+  
+  
+  
+}
+				
+  context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
+  
+  context.strokeStyle = "#ff1a1a";
+  context.lineJoin = "round";
+  context.lineWidth = 5;
+			
+  for(var i=0; i < clickX.length; i++) {		
+    context.beginPath();
+    if(clickDrag[i] && i){
+      context.moveTo(clickX[i-1], clickY[i-1]);
+     }else{
+       context.moveTo(clickX[i]-1, clickY[i]);
+     }
+     context.lineTo(clickX[i], clickY[i]);
+     context.closePath();
+     context.stroke();
+  }	
+} else{
+
+				for(var i=0;i<event.length;i++){
+
+  clickX.push(event[0]);
+  clickY.push(event[1]);
+  clickDrag.push(event[2]);
+  
+}
+				
+  context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
+  
+  context.strokeStyle = "#ff1a1a";
+  context.lineJoin = "round";
+  context.lineWidth = 5;
+			
+  for(var i=0; i < clickX.length; i++) {		
+    context.beginPath();
+    if(clickDrag[i] && i){
+      context.moveTo(clickX[i-1], clickY[i-1]);
+     }else{
+       context.moveTo(clickX[i]-1, clickY[i]);
+     }
+     context.lineTo(clickX[i], clickY[i]);
+     context.closePath();
+     context.stroke();
+  }
+
+
+} 
+				
+				
+				
+            }
+			
+
+
+
+			
+			
+			
+			
+			
+			
+			
+
+            // ......................................................
+            // ..................RTCMultiConnection Code.............
+            // ......................................................
+
+            var connection = new RTCMultiConnection();
+
+            // by default, socket.io server is assumed to be deployed on your own URL
+            connection.socketURL = '/';
+
+            // comment-out below line if you do not have your own socket.io server
+            // connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
+
+            connection.socketMessageEvent = 'textchat-plus-fileshare-demo';
+
+            connection.enableFileSharing = true; // by default, it is "false".
+
+            connection.session = {
+                data: true
+            };
+
+            connection.sdpConstraints.mandatory = {
+                OfferToReceiveAudio: false,
+                OfferToReceiveVideo: false
+            };
+
+            connection.onmessage = appendDIV;
+            connection.filesContainer = document.getElementById('file-container');
+
+            connection.onopen = function() {
+                document.getElementById('share-file').disabled = false;
+                document.getElementById('input-text-chat').disabled = false;
+            };
+
+            function disableInputButtons() {
+                document.getElementById('open-or-join-room').disabled = true;
+                document.getElementById('open-room').disabled = true;
+                document.getElementById('join-room').disabled = true;
+                document.getElementById('room-id').disabled = true;
+            }
+
+            // ......................................................
+            // ......................Handling Room-ID................
+            // ......................................................
+
+            function showRoomURL(roomid) {
+                var roomHashURL = '#' + roomid;
+                var roomQueryStringURL = '?roomid=' + roomid;
+
+                var html = '<h2>Unique URL for your room:</h2><br>';
+
+                html += 'Hash URL: <a href="' + roomHashURL + '" target="_blank">' + roomHashURL + '</a>';
+                html += '<br>';
+                html += 'QueryString URL: <a href="' + roomQueryStringURL + '" target="_blank">' + roomQueryStringURL + '</a>';
+
+                var roomURLsDiv = document.getElementById('room-urls');
+                roomURLsDiv.innerHTML = html;
+
+                roomURLsDiv.style.display = 'block';
+            }
+
+            (function() {
+                var params = {},
+                    r = /([^&=]+)=?([^&]*)/g;
+
+                function d(s) {
+                    return decodeURIComponent(s.replace(/\+/g, ' '));
+                }
+                var match, search = window.location.search;
+                while (match = r.exec(search.substring(1)))
+                    params[d(match[1])] = d(match[2]);
+                window.params = params;
+            })();
+
+            var roomid = '';
+            if (localStorage.getItem(connection.socketMessageEvent)) {
+                roomid = localStorage.getItem(connection.socketMessageEvent);
+            } else {
+                roomid = connection.token();
+            }
+            document.getElementById('room-id').value = roomid;
+            document.getElementById('room-id').onkeyup = function() {
+                localStorage.setItem(connection.socketMessageEvent, this.value);
+            };
+
+            var hashString = location.hash.replace('#', '');
+            if(hashString.length && hashString.indexOf('comment-') == 0) {
+              hashString = '';
+            }
+
+            var roomid = params.roomid;
+            if(!roomid && hashString.length) {
+                roomid = hashString;
+            }
+
+            if(roomid && roomid.length) {
+                document.getElementById('room-id').value = roomid;
+                localStorage.setItem(connection.socketMessageEvent, roomid);
+
+                // auto-join-room
+                (function reCheckRoomPresence() {
+                    connection.checkPresence(roomid, function(isRoomExists) {
+                        if(isRoomExists) {
+                            connection.join(roomid);
+                            return;
+                        }
+
+                        setTimeout(reCheckRoomPresence, 5000);
+                    });
+                })();
+
+                disableInputButtons();
+            }
+        </script>
+
+
+
+
+
+
+</body>
+
+</html>

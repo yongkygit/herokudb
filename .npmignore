@@ -1,0 +1,29 @@
+node_modules
+bower_components
+
+<<<<<<< HEAD
+make-tar.sh
+
+=======
+>>>>>>> 3c996bd0bf2e56dd992323760e6bb5dc4e47df98
+*.tar.gz
+lib-cov
+v2.2.2
+
+.*.swp
+._*
+.DS_Store
+.git
+.hg
+.npmrc
+.lock-wscript
+.svn
+.wafpickle-*
+config.gypi
+CVS
+<<<<<<< HEAD
+npm-debug.log
+rmc-debug.log
+=======
+npm-debug.log
+>>>>>>> 3c996bd0bf2e56dd992323760e6bb5dc4e47df98

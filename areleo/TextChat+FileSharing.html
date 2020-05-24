@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Areleo</title>
+<!-- custom-theme -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- custom layout for HTML5 audio/video elements -->
+	<link rel="stylesheet" href="/dev/getHTMLMediaElement.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/areleo/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/areleo/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+	
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="/areleo/js/jquery-3.1.1.slim.min.js"></script>
+    <script src="/areleo/js/tether.min.js"></script>
+    <script src="/areleo/js/bootstrap.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- //font-awesome-icons -->
+<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,900" rel="stylesheet">
+  
+  <link rel="shortcut icon" href="/demos/logo.png">
+  <style>
+  body {
+    color: #f3eded;
+  }
+
+
+.chat{
+	width: auto;
+	hight: auto;
+    padding: 10px;
+	background: HoneyDew;
+	color: #ff751a;
+    border: 5px solid gray;
+	border-radius: 15px 15px 15px 15px;
+    margin: 0;
+
+}
+	
+        video {
+            object-fit: fill;
+            width: 30%;
+        }
+        button,
+        input,
+        select {
+            font-weight: normal;
+            padding: 2px 4px;
+            text-decoration: none;
+            display: inline-block;
+            text-shadow: none;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .make-center {
+            text-align: center;
+            padding: 5px 10px;
+        }
+  
+  /* The side navigation menu */
+.sidenav {
+    height: 40%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: white; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.7s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 14px;
+	font-weight: bold;
+    color: #404E67;
+    display: block;
+    transition: 0.3s
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #yellow;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 14px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 14px;}
+}  
+  
+  </style>
+
+</head>
+
+<body>
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <h5 style="color:#404E67;margin-left:32px;">SERVICES</h5>
+  <a href="/rtc"><i class="fa fa-television" style="color:#404E67" aria-hidden="true"></i> Video Conference</a>
+  <a href="areleo/schedule.html"><i class="fa fa-television" style="color:#404E67" aria-hidden="true"></i> Schedule</a>
+  <a href="areleo/report.html"><i class="fa fa-line-chart" style="color:#404E67" aria-hidden="true"></i> Report</a>
+</div>
+
+<div class="menu-areleo-up"> 
+<div class="container">
+  <div class="row">
+
+<span style="font-size:27px;cursor:pointer color: black;margin:5px 20px 0px 0px;padding-top:0px;" onclick="openNav()">&#9776;</span>
+ <a href="/" role="button" style="margin:15px 5px 0px 5px;"><i class="fa fa-user-o fa-lg" aria-hidden="true"></i></a>
+ <a href="/rtc" role="button" style="margin:15px 5px 0px 5px;"><i class="fa fa-video-camera fa-lg" aria-hidden="true"></i></a>
+ <a href="/visualassistant" role="button" style="margin:15px 5px 0px 5px;"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+ <a href="/chatsharing" role="button" style="margin:15px 5px 0px 5px;"><i class="fa fa-comments-o fa-lg" aria-hidden="true"></i></a>
+
+
+
+<img src="/areleo/images/logo_light.png" style="margin:auto; margin-top: 15px;margin-bottom: 11px;display:block" height = "35px" alt="Areleo">
+<div id= "server-on" class="btn-on" style="position: absolute; top: 15px;right: 95px;" ><center><i class="fa fa-wifi" style="margin-top:5px;"aria-hidden="true"></i></center></div>
+<a href="/logout" role="button" style="float:right;margin-top: 15px;color:white;">Logout</a>
+
+
+
+	</div>
+</div>
+</div>
+<div class="menu-areleo"> 
+<div class="container-fluid">
+  <div class="row">
+    <div class="col col-lg-5">
+	<h4 style="color:#ffff00;margin : 51px 0px 25px">CHAT SHARING</h4>
+					<table id="location1" class="table" style="color:#00001a;background-color:white;">
+					<thead>
+					  <tr align ="center">
+						<th>NAME</th>
+						<th style="color:#00001a;">TELEPHONE</th>
+						<th style="color:#00001a;"></th>
+					  </tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+					</table>
+					
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+			<br>
+		<br>
+		<br>
+		<br>	
+		
+				<br>
+			<br>
+
+		<br>	
+		
+ <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2"><span class="float-md-left d-xs-block d-md-inline-block">Copyright  &copy; 2017 <a href="https://areleo.com" target="_blank" class="text-bold-800 grey darken-2">areleo </a>, All rights reserved. </span></p>		
+
+		      
+    </div>
+    <div class="col col-lg-7">
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" style="color: Coral;" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Phonebook</h4>
+        </div>
+        <div class="modal-body">
+		
+					<table id="location1" class="table" style="color:#00001a;">
+					<thead>
+					  <tr align ="center">
+						<th>NAME</th>
+						<th style="color:#00001a;">TELEPHONE</th>
+						<th style="color:#00001a;">DELETE</th>
+					  </tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+					</table>
+				  
+        </div>
+        <div class="modal-footer">
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- Modal -->
+  <div class="modal fade" id="myModalcall" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" style="color: Coral;" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Call log</h4>
+        </div>
+        <div class="modal-body">
+		
+					<table id="location2" class="table" style="color:#00001a;">
+					<thead>
+					  <tr align ="center">
+						<th>NAME</th>
+						<th style="color:#00001a;">TIME</th>
+					  </tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+					</table>
+        </div>
+        <div class="modal-footer">
+         
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <div class="form-group">
+
+		<input class="form-control" type="hidden" id="callaudio" >
+		<input class="form-control" type="hidden" id="user-name" placeholder= "user id">
+  </div>				
+        
+			<p id="textcalling"></p>  
+				<p id="ringMode" style="color:red;"></p>
+
+				
+				<input type="hidden" id="dataOnline" value="notcall">	
+                <input type="hidden" id="room-id" value="abcdef">
+				<input type="hidden" id="idusercall">
+    <button style="color: #fffff;background: #3BCF15;border-radius: 25px 25px 25px 25px;border-color: #2D9B11;" class="btn btn-info btn-md" id="open-room"><i class="fa fa-phone" aria-hidden="true"></i> Calling</button>
+    <button style="color: #fffff;background: #3FDB18;border-radius: 25px 25px 25px 25px;border-color: #2C9212;" class="btn btn-info btn-md" id="join-room"><i class="fa fa-volume-control-phone" aria-hidden="true"></i> Accept</button>
+	<button style="color: #fffff;background: #ff471a;border-radius: 25px 25px 25px 25px;border-color: #CA3C19;" class="btn btn-info btn-md" id="submit" ><i class="fa fa-phone-square" aria-hidden="true"></i> Close</button>
+                <div id="open-or-join-room"></div>
+				<br>
+				<div class="form-inline">
+                <input type="text" style="color: #272222;" id="input-text-chat" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Enter Text Chat" disabled>
+                <button style="color: #fff;" id="share-file" class="btn btn-info" disabled>Share File</button>
+				</div>
+				<br>
+
+                <div id="room-urls" style="text-align: center;display: none;background: #F1EDED;margin: 15px -10px;border: 1px solid rgb(189, 189, 189);border-left: 0;border-right: 0;"></div>
+           
+
+            <div id="chat-container">
+                <div id="file-container"></div>
+                <div class="chat-output"></div>
+            </div>
+        </section>
+		<br>
+		
+						<table id="location2" class="table" style="color:#00001a;background-color:white;">
+					<thead>
+					  <tr align ="center">
+						<th>NAME</th>
+						<th style="color:#00001a;">TIME</th>
+					  </tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+					</table>	
+				
+
+	</div>
+	
+  </div>
+</div> 
+</div>
+	
+		
+        <script src="/dist/RTCMultiConnection.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+
+        <script src="/areleo/js/FileBufferReader.js"></script>
+
+        <script>
+//fungsi java biasa
+
+
+/* Set the width of the side navigation to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+} 
+
+	var socket = io.connect();
+function myFunction(data) {
+    document.getElementById("callaudio").value = data;
+	document.getElementById("open-room").style.visibility = "visible";
+}
+  function deletephone(data) {
+    console.log(data);
+	socket.emit('deletetelephone', data); 
+	window.location.assign("/chatsharing");
+  }
+document.getElementById("open-room").style.visibility = "hidden";
+document.getElementById("join-room").style.visibility = "hidden";
+document.getElementById("submit").style.visibility = "hidden";
+
+
+
+$(document).ready(function(){
+
+	  
+        var NAME,TIMMERCALL;
+        $("#submit").click(function(){
+          NAME=$("#room-id").val();
+          TIMMERCALL=$("#TIMMERCALL").val();
+		  
+  
+  
+ $.post( "http://localhost:9001/timer", {NAME: NAME,TIMMERCALL: TIMMERCALL})
+  .done(function( data ) {
+    
+  }); 
+  alert( "Data Loaded: " );
+  window.location.reload();
+  
+        });
+  
+	var socket = io.connect();
+	var $message = '#f90606';
+	
+	socket.emit('send message', $message);
+		socket.on('new message', function(data){
+		document.getElementById("server-on").style.backgroundColor = data; 
+		}); 
+		
+	socket.on('caller', function(data){
+  
+		//document.getElementById('open-room').style.visibility = 'hidden';
+
+        $.ajax({url: "/id_user", success: function(result){
+		console.log(result.message);
+
+		console.log(data[1]);
+		
+		if(data[1] == result.message){
+		
+		document.getElementById("textcalling").innerHTML ="<div class='alert alert-success'>" + data[0]+" calling ...!" + "</div>";
+		document.getElementById("ringMode").innerHTML = "<div class='alert alert-danger'>" + data[2]+" calling ...!" + "</div>";
+		dataOnline = document.getElementById("dataOnline").value;
+		
+		if(dataOnline=="notcall"){
+		
+		var audio = new Audio('/audio');
+		audio.play();
+		
+		}
+  //document.getElementById('open-room').style.visibility = 'visible';
+		console.log(data[1]);
+		document.getElementById("join-room").style.visibility = "visible";
+		document.getElementById("room-id").value = data[0];
+		}
+
+        }});
+
+		});
+   
+        $.ajax({url: "/id_user", success: function(result){
+		console.log(result);
+
+			$.each(result, function(k, field){
+			
+					document.getElementById('room-id').value = field;  
+					document.getElementById('idusercall').value = field; 
+					
+            });	
+				
+        }});
+    
+        $.ajax({url: "/readadmin", success: function(result){
+		console.log(result);
+
+		$.each(result, function(i, j){
+		
+			$.each(j, function(k, field){
+			if(k == "_id"){console.log(field);}
+			else if(k == "ADDRESS"){
+			        $("#location1 tbody").append(
+					'<tr>'
+					+''
+					+field 
+					+''
+					);
+			}
+			else if(k == "NAME"){
+				data = "'" +field+ "'";
+			
+                $("#location1 tbody").append(
+					'<td>'					 
+					+'<button style ="color:white;border-radius: 5px 5px 5px 5px; background:lime; border:none;" data-dismiss="modal" onclick="myFunction('+data+')">'+field+'   <i class="fa fa-phone" aria-hidden="true"></i>'+'</td>'
+					);
+				//console.log(field);
+			}else{
+			
+			
+                $("#location1 tbody").append(
+					"<td>"
+					+field 
+					+"</td>"
+					+"<td>"
+					+'<button style ="color:white;border-radius: 5px 5px 5px 5px; background:red; border:none;" onclick="deletephone('+data+')"><i class="fa fa-times" aria-hidden="true"></i></button>'
+					+"</td>"
+					+"</tr>"
+					);
+				//console.log(field);
+			}	
+			
+				
+            });	
+				
+        });
+
+        }});	
+
+
+        $.ajax({url: "/calllog", success: function(result){
+		console.log(result);
+
+		$.each(result, function(i, j){
+		
+			$.each(j, function(k, field){
+			if(k == "_id"){
+					$("#location2 tbody").append(
+					'<tr>'
+					+''
+					+field 
+					+''
+					);
+			}
+			else if(k == "NAME"){
+				data = "'" +field+ "'";
+			
+                $("#location2 tbody").append(
+					'<td>'					 
+					+field+'</td>'
+					);
+				//console.log(field);
+			}else{
+			
+			
+                $("#location2 tbody").append(
+					"<td>"
+					+field 
+					+"</td>"
+					+
+					+"</tr>"
+					);
+				//console.log(field);
+			}	
+			
+				
+            });	
+				
+        });
+
+        }});
+		
+		
+            // ......................................................
+            // .......................UI Code........................
+            // ......................................................
+
+            document.getElementById('open-room').onclick = function() {
+                disableInputButtons();
+                connection.open(document.getElementById('room-id').value, function() {
+                    showRoomURL(connection.sessionid);
+                });
+						
+			datacall = document.getElementById("room-id").value;			
+			datacallnm = document.getElementById("callaudio").value;		
+			socket.emit('call', [datacall,datacallnm,"Chat Sharing Mode"]);
+		
+		var myVaring = setInterval(myRing, 7000);
+		function myRing() {
+			datacallnm = document.getElementById("callaudio").value;
+			datacallusr = document.getElementById("user-name").value;
+			socket.emit('call', [datacall,datacallnm,"Chat Sharing Mode"]);
+		};				
+				
+				document.getElementById("submit").style.visibility = "visible";				
+				
+            };
+
+            document.getElementById('join-room').onclick = function() {
+                disableInputButtons();
+                connection.join(document.getElementById('room-id').value);
+				document.getElementById("dataOnline").value="call";
+            };
+
+			
+			
+            document.getElementById('open-or-join-room').onclick = function() {
+                disableInputButtons();
+                connection.openOrJoin(document.getElementById('room-id').value, function(isRoomExists, roomid) {
+                    if(!isRoomExists) {
+                        showRoomURL(roomid);
+                    }
+                });
+            };
+
+            // ......................................................
+            // ................FileSharing/TextChat Code.............
+            // ......................................................
+
+            document.getElementById('share-file').onclick = function() {
+                var fileSelector = new FileSelector();
+                fileSelector.selectSingleFile(function(file) {
+                    connection.send(file);
+                });
+            };
+
+            document.getElementById('input-text-chat').onkeyup = function(e) {
+                if (e.keyCode != 13) return;
+
+                // removing trailing/leading whitespace
+                this.value = this.value.replace(/^\s+|\s+$/g, '');
+                if (!this.value.length) return;
+				
+				namauser = document.getElementById('idusercall').value;
+
+                connection.send("<div class='chat'><b><i>"+namauser+"</i></b>   : "+this.value+"</div>");
+                appendDIV("<div class='chat' style='text-align: right;'>"+this.value+"   : <b><i>"+namauser+"</i></b></div>");
+                this.value = '';
+            };
+
+            var chatContainer = document.querySelector('.chat-output');
+
+            function appendDIV(event) {
+                var div = document.createElement('div');
+                div.innerHTML = event.data || event;
+                chatContainer.insertBefore(div, chatContainer.firstChild);
+                div.tabIndex = 0;
+                div.focus();
+
+                document.getElementById('input-text-chat').focus();
+            }
+
+            // ......................................................
+            // ..................RTCMultiConnection Code.............
+            // ......................................................
+
+            var connection = new RTCMultiConnection();
+
+            // by default, socket.io server is assumed to be deployed on your own URL
+            connection.socketURL = '/';
+
+            // comment-out below line if you do not have your own socket.io server
+            // connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
+
+            connection.socketMessageEvent = 'textchat-plus-fileshare-demo';
+
+            connection.enableFileSharing = true; // by default, it is "false".
+
+            connection.session = {
+                data: true
+            };
+
+            connection.sdpConstraints.mandatory = {
+                OfferToReceiveAudio: false,
+                OfferToReceiveVideo: false
+            };
+
+            connection.onmessage = appendDIV;
+            connection.filesContainer = document.getElementById('file-container');
+
+            connection.onopen = function() {
+                document.getElementById('share-file').disabled = false;
+                document.getElementById('input-text-chat').disabled = false;
+				
+		var secondsLabel = document.getElementById("TIMMERCALL");
+        var totalSeconds = 0;
+        setInterval(setTime, 1000);
+
+        function setTime()
+        {
+            ++totalSeconds;
+            secondsLabel.value = totalSeconds;
+        } 
+		
+				document.getElementById("submit").style.visibility = "visible";				
+				
+            };
+
+            function disableInputButtons() {
+                document.getElementById('open-or-join-room').disabled = true;
+                document.getElementById('open-room').disabled = true;
+                document.getElementById('join-room').disabled = true;
+                document.getElementById('room-id').disabled = true;
+            }
+
+            // ......................................................
+            // ......................Handling Room-ID................
+            // ......................................................
+
+            function showRoomURL(roomid) {
+                var roomHashURL = '#' + roomid;
+                var roomQueryStringURL = '?roomid=' + roomid;
+
+                var html = '';
+                html += '<div style="color:black;">Calling ..... '+''+'</div>';
+
+                var roomURLsDiv = document.getElementById('room-urls');
+                roomURLsDiv.innerHTML = html;
+
+                roomURLsDiv.style.display = 'block';
+            }
+
+            (function() {
+                var params = {},
+                    r = /([^&=]+)=?([^&]*)/g;
+
+                function d(s) {
+                    return decodeURIComponent(s.replace(/\+/g, ' '));
+                }
+                var match, search = window.location.search;
+                while (match = r.exec(search.substring(1)))
+                    params[d(match[1])] = d(match[2]);
+                window.params = params;
+            })();
+
+            var roomid = '';
+            if (localStorage.getItem(connection.socketMessageEvent)) {
+                roomid = localStorage.getItem(connection.socketMessageEvent);
+            } else {
+                roomid = connection.token();
+            }
+            document.getElementById('room-id').value = roomid;
+            document.getElementById('room-id').onkeyup = function() {
+                localStorage.setItem(connection.socketMessageEvent, this.value);
+            };
+
+            var hashString = location.hash.replace('#', '');
+            if(hashString.length && hashString.indexOf('comment-') == 0) {
+              hashString = '';
+            }
+
+            var roomid = params.roomid;
+            if(!roomid && hashString.length) {
+                roomid = hashString;
+            }
+
+            if(roomid && roomid.length) {
+                document.getElementById('room-id').value = roomid;
+                localStorage.setItem(connection.socketMessageEvent, roomid);
+
+                // auto-join-room
+                (function reCheckRoomPresence() {
+                    connection.checkPresence(roomid, function(isRoomExists) {
+                        if(isRoomExists) {
+                            connection.join(roomid);
+                            return;
+                        }
+
+                        setTimeout(reCheckRoomPresence, 5000);
+                    });
+                })();
+
+                disableInputButtons();
+            }
+			
+			
+			});	
+        </script>
+
+        <script>
+            window.useThisGithubPath = 'muaz-khan/RTCMultiConnection';
+        </script>
+        <script src="https://cdn.webrtc-experiment.com/commits.js" async></script>
+
+    </article>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

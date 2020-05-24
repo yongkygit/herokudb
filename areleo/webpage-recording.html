@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>Areleo</title>
+<!-- custom-theme -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- custom layout for HTML5 audio/video elements -->
+	<link rel="stylesheet" href="/dev/getHTMLMediaElement.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/areleo/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/areleo/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+ 
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="/areleo/js/jquery-3.1.1.slim.min.js"></script>
+    <script src="/areleo/js/tether.min.js"></script>
+    <script src="/areleo/js/bootstrap.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- //font-awesome-icons -->
+
+  
+  <link rel="shortcut icon" href="/demos/logo.png">
+  <style>
+  body {
+    color: #f3eded;
+  }
+  
+  /* The side navigation menu */
+.sidenav {
+    height: 40%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: white; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.7s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 14px;
+	font-weight: bold;
+    color: #404E67;
+    display: block;
+    transition: 0.3s
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #yellow;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 14px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 14px;}
+}  
+  
+  </style>
+  
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<style>
+body {
+    overflow-x: hidden;
+    background: rgb(233, 233, 233);
+}
+
+#elementToShare {
+    background: rgb(233, 233, 233);
+    font-size: 2em;
+    height: 100%;
+    left: 0;
+    padding: 0 1em;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+input,
+textarea {
+    border: 1px solid red;
+    font-size: 1em;
+    outline: none;
+    padding: .3em .8em;
+}
+
+button,
+input[type=button] {
+    -moz-border-radius: 3px;
+    -moz-transition: none;
+    -webkit-transition: none;
+    background: #0370ea;
+    background: -moz-linear-gradient(top, #008dfd 0, #0370ea 100%);
+    background: -webkit-linear-gradient(top, #008dfd 0, #0370ea 100%);
+    border: 1px solid #076bd2;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    font-family: inherit;
+    font-size: .8em;
+    font-size: 1.5em;
+    line-height: 1.3;
+    padding: 5px 12px;
+    text-align: center;
+    text-shadow: 1px 1px 1px #076bd2;
+}
+
+button:hover,
+input[type=button]:hover {
+    background: rgb(9, 147, 240);
+}
+
+button:active,
+input[type=button]:active {
+    background: rgb(10, 118, 190);
+}
+
+button[disabled],
+input[type=button][disabled] {
+    background: none;
+    border: 1px solid rgb(187, 181, 181);
+    color: gray;
+    text-shadow: none;
+}
+
+a {
+    color: #2844FA;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: #1B29A4;
+}
+
+a:active {
+    color: #000;
+}
+
+img, textarea, input, video {
+    vertical-align: top;
+}
+textarea {
+    resize: verticalz;
+}
+</style>
+  
+</head>
+<body>
+
+
+<div id="elementToShare" contenteditable style="margin-top: 3px;">
+    <h2>HTML5 WebPage Activity Recording using RecordRTC</h2>
+    <input type="text" value="Type Text!" />
+    <textarea>resize textarea</textarea><br>
+    You can resize image or above header and drag/move video:<br>
+    <canvas id="animation" style="position:absolute;left:0;background-color:black; width: 300px;"></canvas>
+
+    <video controls style="width:33%;position:absolute;right:40%; background-color:black;" src="video.webm" loop autoplay></video>
+    <video id="camera" controls style="width:33%;position:absolute;right:100px; top:150px;background-color:black;" poster="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTaNXZNkyP2h2vTVJ6MNzQ-qjN8CkmPgtXmNwgMDm4U79frY2j4mQ"></video>
+    
+    <div id="other-demo-hints">There is another demo, that allows you <a href="https://www.webrtc-experiment.com/RecordRTC/Canvas-Recording/record-canvas-drawings.html">record drawings</a>!</div>
+
+    <br>
+
+    <pre>
+var recorder = RecordRTC(document.documentElement, {
+    type: 'canvas',
+    showMousePointer: true
+});
+recorder.startRecording();
+recorder.stopRecording(function(url) {
+    window.open(url);
+});
+</pre>
+</div>
+
+<div style="position: fixed;left: 20%;right: 20%;text-align: center;">
+    <button id="start" contenteditable="false">Start Canvas Recording</button>
+    <button id="stop" disabled contenteditable="false">Stop</button>
+</div>
+
+<script src="https://cdn.webrtc-experiment.com/screenshot.js"></script>
+<script src="https://cdn.webrtc-experiment.com/RecordRTC.js"></script>
+<script src="https://cdn.WebRTC-Experiment.com/gumadapter.js"></script>
+
+<script>
+$( 'img' ).css('cursor', 'move').draggable().resizable();
+$('video, h2, #other-demo-hints, #animation').css('cursor', 'move').draggable();
+
+var elementToShare = document.getElementById('elementToShare');
+var canvas2d = document.createElement('canvas');
+var context = canvas2d.getContext('2d');
+
+canvas2d.width = elementToShare.clientWidth;
+canvas2d.height = elementToShare.clientHeight;
+
+canvas2d.style.top = 0;
+canvas2d.style.left = 0;
+canvas2d.style.zIndex = -1;
+(document.body || document.documentElement).appendChild(canvas2d);
+
+var isRecordingStarted = false;
+var isStoppedRecording = false;
+
+(function looper() {
+    if(!isRecordingStarted) {
+        return setTimeout(looper, 500);
+    }
+
+    html2canvas(elementToShare, {
+        grabMouse: true,
+        onrendered: function(canvas) {
+            context.clearRect(0, 0, canvas2d.width, canvas2d.height);
+            context.drawImage(canvas, 0, 0, canvas2d.width, canvas2d.height);
+
+            if(isStoppedRecording) {
+                return;
+            }
+
+            setTimeout(looper, 1);
+        }
+    });
+})();
+
+
+var recorder = new RecordRTC(canvas2d, {
+    type: 'canvas'
+});
+
+document.getElementById('start').onclick = function() {
+    document.getElementById('start').disabled = true;
+
+    isStoppedRecording = false;
+    isRecordingStarted = true;
+
+    playVideo(function() {
+        recorder.startRecording();
+        setTimeout(function() {
+            document.getElementById('stop').disabled = false;
+        }, 1000);
+    });
+};
+
+function querySelectorAll(selector) {
+    return Array.prototype.slice.call(document.querySelectorAll(selector));
+}
+
+document.getElementById('stop').onclick = function() {
+    this.disabled = true;
+
+    isStoppedRecording = true;
+
+    recorder.stopRecording(function() {
+        querySelectorAll('video').forEach(function(video) {
+            video.pause();
+            video.removeAttribute('src');
+        });
+
+        videoElement.stream.getTracks().forEach(function(track) {
+            track.stop();
+        });
+
+        document.body.innerHTML = '';
+        document.body.style = 'margin: 0; padding: 0;background: black; text-align: center; overflow: hidden;';
+
+        var blob = recorder.getBlob();
+
+        var video = document.createElement('video');
+        video.src = URL.createObjectURL(blob);
+        video.setAttribute('style', 'height: 100%;');
+        document.body.appendChild(video);
+        video.controls = true;
+        video.play();
+    });
+};
+
+window.onbeforeunload = function() {
+    document.getElementById('start').disabled = false;
+    document.getElementById('stop').disabled = true;
+};
+
+webrtcUtils.enableLogs = false;
+
+var videoElement = document.querySelector('#camera');
+function playVideo(callback) {
+    function successCallback(stream) {
+        videoElement.stream = stream;
+        videoElement.onloadedmetadata = function() {
+            callback();
+        };
+        videoElement.src = URL.createObjectURL(stream);
+        videoElement.play();
+    }
+
+    function errorCallback(error) {
+        console.error('get-user-media error', error);
+        callback();
+    }
+
+    var mediaConstraints = { video: true };
+
+    navigator.mediaDevices.getUserMedia(mediaConstraints).then(successCallback).catch(errorCallback);
+}
+
+// canvas animation
+(function() {
+    if(!innerWidth) var innerWidth = document.body.clientWidth;
+    if(!innerHeight) var innerHeight = document.body.clientHeight;
+    innerHeight = innerHeight - (innerHeight / 3);
+
+    document.createElement("canvas").getContext?(function(){function a(){s.closePath(),s.fillStyle="rgba("+parseInt(Math.random()*255)+", "+parseInt(Math.random()*255)+", "+parseInt(Math.random()*255)+", .9)",s.fill(),s.beginPath()}function l(){var v;c+=5,h===1&&(t+=5,o+=5,n+=5,u+=5,c>20&&(h=2)),h===2&&(t-=5,o-=5,n-=5,u-=5,c>40&&(h=3)),h===3&&(f+=5,r+=5,i+=5,e+=5,c>60&&(h=4)),h===4&&(f-=5,r-=5,i-=5,e-=5,c>80&&(c=0,h=1)),s.clearRect(0,0,5e4,5e4);var y=[[t,n],[t,n],[t+269,n+69],[t+269,n+69],[t+211,n-162],[t+211,n-162],[t+23,n-213],[t+23,n-213],[t-165,n-60],[t-165,n-60],[t-72,n+116],[t-72,n+116],[t+74,n+117],[t+74,n+117],[t+128,n+128],[t+128,n+128],[t+274,n+15],[t+274,n+15],[t+137,n-158],[t+137,n-158],[t-80,n-97],[t-80,n-97],[t-114,n-10],[t-114,n-10],[t-165,n-57],[t-165,n-57],[t-72,n+118],[t-72,n+118],[t+72,n+117],[t+72,n+117],[t+268,n+67],[t+268,n+67],[t+211,n-162],[t+211,n-162],[t+24,n-211],[t+24,n-211]],p=[[f,i,r,e,o,u],[f+95,i+139,r-46,e+104,o,u],[f+186,i+153,r-44,e+97,o+29,u+3],[f+326,i+112,r+24,e+55,o+29,u+3],[f+317,i+12,r-7,e+77,o+5,u-65],[f+262,i-64,r-58,e-55,o+5,u-65],[f+154,i-43,r-116,e+6,o-88,u-76],[f+72,i-84,r-187,e-35,o-88,u-76],[f-81,i+111,r-162,e+70,o-142,u-39],[f-51,i+31,r-195,e-15,o-142,u-39],[f+78,i+239,r-123,e+142,o-124,u+47],[f-9,i+207,r-250,e+109,o-124,u+47],[f+107,i+229,r-162,e+130,o-55,u+61],[f+206,i+213,r-81,e+127,o-55,u+61],[f+196,i+191,r+67,e+166,o+151,u+108],[f+250,i+283,r+110,e+204,o+151,u+108],[f+283,i+100,r+87,e+12,o+136,u-78],[f+409,i+38,r+137,e-10,o+136,u-78],[f+164,i-44,r-76,e-50,o-36,u-163],[f+204,i-101,r-53,e-107,o-36,u-163],[f+23,i-2,r-156,e-53,o-118,u-132],[f-43,i-51,r-162,e-77,o-118,u-132],[f-26,i+101,r-190,e+86,o-189,u+73],[f-65,i+121,r-264,e+117,o-189,u+73],[f-65,i+121,r-264,e+117,o-363,u-30],[f-55,i+5,r-326,e-61,o-363,u-30],[f-61,i+140,r-261,e+205,o-239,u+204],[f+101,i+266,r-208,e+249,o-239,u+204],[f+110,i+237,r-161,e+190,o-22,u+238],[f+110,i+237,r+47,e+161,o-22,u+238],[f+309,i+214,r+121,e+202,o+254,u+160],[f+309,i+214,r+192,e+61,o+254,u+160],[f+325,i+14,r+161,e-98,o+178,u-203],[f+239,i-124,r+116,e-130,o+178,u-203],[f+179,i-105,r-74,e-175,o-104,u-255],[f+13,i-51,r-152,e-169,o-104,u-255]],w=36;for(v=0;v<w;v++)s.moveTo(y[v][0],y[v][1]),s.bezierCurveTo(p[v][0],p[v][1],p[v][2],p[v][3],p[v][4],p[v][5]),s.translate(y[v][0],y[v][1]),s.rotate(.001),s.translate(-y[v][0],-y[v][1]),a();oninterval(l)}var s;window.oninterval=function(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(n){window.setTimeout(n,1e3/60)}}(),s=document.getElementById("animation").getContext("2d"),s.canvas.width=innerWidth,s.canvas.height=innerHeight,s.lineWidth=2;var c=0,h=1,t=396,n=342,f=339,i=232,r=529,e=255,o=498,u=322;l()})():(alert("Your browser is not supporting HTML5 Canvas APIs!"))
+})();
+</script>
+
+<a href="https://www.webrtc-experiment.com/RecordRTC/Canvas-Recording/" style="border-bottom: 1px solid red; color: red; font-size: 1.2em; position: absolute; right: 0; text-decoration: none; top: 0;">Other Canvas-Recording Demos</a>
+
+
+
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <h5 style="color:#404E67;margin-left:32px;">SERVICES</h5>
+  <a href="/rtc"><i class="fa fa-television" style="color:#404E67" aria-hidden="true"></i> Video Conference</a>
+  <a href="areleo/schedule.html"><i class="fa fa-television" style="color:#404E67" aria-hidden="true"></i> Schedule</a>
+  <a href="areleo/report.html"><i class="fa fa-line-chart" style="color:#404E67" aria-hidden="true"></i> Report</a>
+</div>
+
+<div class="menu-areleo-up"> 
+<div class="container">
+  <div class="row">
+
+<span style="font-size:27px;cursor:pointer color: black;margin:5px 20px 0px 0px;padding-top:0px;" onclick="openNav()">&#9776;</span>
+ <a href="/" role="button" style="margin:15px 5px 0px 5px;"><i class="fa fa-user-o fa-lg" aria-hidden="true"></i></a>
+ <a href="/rtc" role="button" style="margin:15px 5px 0px 5px;"><i class="fa fa-video-camera fa-lg" aria-hidden="true"></i></a>
+ <a href="/visualassistant" role="button" style="margin:15px 5px 0px 5px;"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+ <a href="/chatsharing" role="button" style="margin:15px 5px 0px 5px;"><i class="fa fa-comments-o fa-lg" aria-hidden="true"></i></a>
+
+
+
+<img src="/areleo/images/logo_light.png" style="margin:auto; margin-top: 15px;margin-bottom: 11px;display:block" height = "35px" alt="Areleo">
+<div id= "server-on" class="btn-on" style="position: absolute; top: 15px;right: 95px;" ><center><i class="fa fa-wifi" style="margin-top:5px;"aria-hidden="true"></i></center></div>
+<a href="/logout" role="button" style="float:right;margin-top: 15px;color:white;">Logout</a>
+
+
+
+	</div>
+</div>
+</div>
+
+<!--
+<div class="container">
+  <nav class="navbar navbar-toggleable-md navbar-light navbar-head">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" style="margin-top: -15px;" href="/"><img src="/areleo/images/logo_areleo.png" height = "75px"alt="Areleo"></a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/rtc">Video Conference</a>
+      </li>	  
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+      </li>	  
+    </ul>
+  </div>
+</nav>
+</div>-->
+
+
+<div class="menu-areleo"> 
+<div class="container-fluid">
+  <div class="row">
+    <div class="col col-lg-5">
+	
+	<h4 style="color:#ffff00;margin : 51px 0px 25px">VIDEO CONFERENCE</h4>
+					<table id="location1" class="table" style="color:#00001a;background-color:white;">
+					<thead>
+					  <tr align ="center">
+						<th>NAME</th>
+						<th style="color:#00001a;">TELEPHONE</th>
+						<th style="color:#00001a;"></th>
+					  </tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+					</table>
+					
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+			<br>
+		<br>
+		<br>
+		<br>	
+		
+				<br>
+			<br>
+
+		<br>	
+		
+ <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2"><span class="float-md-left d-xs-block d-md-inline-block">Copyright  &copy; 2017 <a href="https://areleo.com" target="_blank" class="text-bold-800 grey darken-2">areleo </a>, All rights reserved. </span></p>		
+
+				
+    </div>
+    <div class="col col-lg-7">
+
+  <!-- Trigger the modal with a button -->
+  
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" style="color: Coral;" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Phonebook</h4>
+        </div>
+        <div class="modal-body">
+		
+
+        </div>
+        <div class="modal-footer">
+         
+        </div>
+      </div>
+    </div>
+  </div>
+				
+				
+  <!-- Modal -->
+  <div class="modal fade" id="myModalcall" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" style="color: Coral;" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Call log</h4>
+        </div>
+        <div class="modal-body">
+		
+
+        </div>
+        <div class="modal-footer">
+         
+        </div>
+      </div>
+    </div>
+  </div>				
+
+					
+					<br>
+  <div class="form-group">
+
+		<input class="form-control" type="hidden" id="callaudio" >
+		<input class="form-control" type="hidden" id="user-name" placeholder= "user id">
+  </div>
+
+				
+				<p id="textcalling"></p>
+				<p id="ringMode" style="color:red;"></p>
+
+				
+	<input type="hidden" id="dataOnline" value="notcall">			
+    <input type="hidden" id="room-id" value="abcdef" autocorrect=off autocapitalize=off size=20>
+    <button style="color: #fffff;background: #3BCF15;border-radius: 25px 25px 25px 25px;border-color: #2D9B11;" class="btn btn-info btn-md" id="open-room"><i class="fa fa-phone" aria-hidden="true"></i> Calling</button>
+    <button style="color: #fffff;background: #3FDB18;border-radius: 25px 25px 25px 25px;border-color: #2C9212;" class="btn btn-info btn-md" id="join-room"><i class="fa fa-volume-control-phone" aria-hidden="true"></i> Accept</button>
+	<button style="color: #fffff;background: #ff471a;border-radius: 25px 25px 25px 25px;border-color: #CA3C19;" class="btn btn-info btn-md" id="submit" ><i class="fa fa-phone-square" aria-hidden="true"></i> Close</button>
+	<br>							
+	<input type="hidden" id="TIMMERCALL" placeholder=""><br>
+
+    <div style="color: #251F1D;" id="open-or-join-room"></div>
+
+    <div id="room-urls"  align="center" ></div>
+
+    <div id="videos-container"></div>
+  
+
+					<table id="location2" class="table" style="color:#00001a;background-color:white;">
+					<thead>
+					  <tr align ="center">
+						<th>NAME</th>
+						<th style="color:#00001a;">TIME</th>
+					  </tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+					</table>
+
+	</div>
+
+	
+  </div>
+</div> 
+</div>
+
+
+
+
+
+        <h1>RecordRTC to Node.js</h1>
+        <p>
+            <video></video> 
+        </p><hr />
+        
+        <div>
+            <label id="percentage">0%</label>
+            <progress id="progress-bar" value=0></progress><br />
+        </div>
+            
+        <hr />
+
+        <div>
+            <button id="btn-start-recording">Start Recording</button>
+            <button id="btn-stop-recording" disabled="">Stop Recording</button>
+        </div>
+
+        <script src="/node_modules/recordrtc/RecordRTC.js"> </script>
+        
+        <script>
+
+        </script>
+        <footer style="width:100%;position: fixed; right: 0; text-align: center;color:red;">
+            <h2 id="footer-h2"></h2>
+            Questions?? <a href="mailto:muazkh@gmail.com">muazkh@gmail.com</a>
+
+            <br><br>
+            Open-Sourced here:<br>
+            <a href="https://github.com/muaz-khan/RecordRTC/tree/master/RecordRTC-to-Nodejs">https://github.com/muaz-khan/RecordRTC/tree/master/RecordRTC-to-Nodejs</a>
+        </footer>		
+		
+		
+
+		
+		
+
+<script src="dist/RTCMultiConnection.min.js"></script>
+
+<script src="dev/adapter.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+
+
+<script src="/dev/getHTMLMediaElement.js"></script>
+
+
+
+
+
+
+
+
+        <script>
+
+		
+/* Set the width of the side navigation to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+} 			
+		
+		
+
+        </script>
+
+
+
+<script>
+
+
+
+
+
+//fungsi java biasa
+	var socket = io.connect();
+function myFunction(data) {
+    document.getElementById("callaudio").value = data;
+	document.getElementById("open-room").style.visibility = "visible";
+}
+  function deletephone(data) {
+    console.log(data);
+	socket.emit('deletetelephone', data); 
+	window.location.assign("/chatsharing");
+  }
+document.getElementById("open-room").style.visibility = "hidden";
+document.getElementById("join-room").style.visibility = "hidden";
+document.getElementById("submit").style.visibility = "hidden";
+
+
+
+$(document).ready(function(){
+
+	  
+        var NAME,TIMMERCALL;
+        $("#submit").click(function(){
+          NAME=$("#room-id").val();
+          TIMMERCALL=$("#TIMMERCALL").val();
+		  
+  
+  
+ $.post( "http://localhost:9001/timer", {NAME: NAME,TIMMERCALL: TIMMERCALL})
+  .done(function( data ) {
+    
+  }); 
+  alert( "Data Loaded: " );
+  window.location.reload();
+  
+        });
+  
+	var socket = io.connect();
+	var $message = '#f90606';
+	
+	socket.emit('send message', $message);
+		socket.on('new message', function(data){
+		document.getElementById("server-on").style.backgroundColor = data; 
+		}); 
+		
+	socket.on('caller', function(data){
+  
+		//document.getElementById('open-room').style.visibility = 'hidden';
+
+        $.ajax({url: "/id_user", success: function(result){
+		console.log(result.message);
+
+		console.log(data[1]);
+		
+		if(data[1] == result.message){
+		
+		document.getElementById("textcalling").innerHTML ="<div class='alert alert-success'>" + data[0]+" calling ...!" + "</div>";
+		document.getElementById("ringMode").innerHTML = "<div class='alert alert-danger'>" + data[2]+" calling ...!" + "</div>";
+		dataOnline = document.getElementById("dataOnline").value;
+		
+		if(dataOnline=="notcall"){
+		
+		var audio = new Audio('/audio');
+		audio.play();
+		
+		}
+  //document.getElementById('open-room').style.visibility = 'visible';
+		console.log(data[1]);
+		document.getElementById("join-room").style.visibility = "visible";
+		document.getElementById("room-id").value = data[0];
+		}
+
+        }});
+
+		});
+   
+        $.ajax({url: "/id_user", success: function(result){
+		console.log(result);
+
+			$.each(result, function(k, field){
+			
+					document.getElementById('room-id').value = field;  
+					document.getElementById('idusercall').value = field; 
+					
+            });	
+				
+        }});
+    
+        $.ajax({url: "/readadmin", success: function(result){
+		console.log(result);
+
+		$.each(result, function(i, j){
+		
+			$.each(j, function(k, field){
+			if(k == "_id"){console.log(field);}
+			else if(k == "ADDRESS"){
+			        $("#location1 tbody").append(
+					'<tr>'
+					+''
+					+field 
+					+''
+					);
+			}
+			else if(k == "NAME"){
+				data = "'" +field+ "'";
+			
+                $("#location1 tbody").append(
+					'<td>'					 
+					+'<button style ="color:white;border-radius: 5px 5px 5px 5px; background:lime; border:none;" data-dismiss="modal" onclick="myFunction('+data+')">'+''+'   <i class="fa fa-phone" aria-hidden="true"></i></button> '+field+'</td>'
+					);
+				//console.log(field);
+			}else{
+			
+			
+                $("#location1 tbody").append(
+					"<td>"
+					+field 
+					+"</td>"
+					+"<td>"
+					+'<button style ="color:white;border-radius: 5px 5px 5px 5px; background:red; border:none;" onclick="deletephone('+data+')"><i class="fa fa-times" aria-hidden="true"></i>' 
+					+"</td>"
+					+"</tr>"
+					);
+				//console.log(field);
+			}	
+			
+				
+            });	
+				
+        });
+
+        }});
+
+
+
+        $.ajax({url: "/calllog", success: function(result){
+		console.log(result);
+
+		$.each(result, function(i, j){
+		
+			$.each(j, function(k, field){
+			if(k == "_id"){
+					$("#location2 tbody").append(
+					'<tr>'
+					+''
+					+field 
+					+''
+					);
+			}
+			else if(k == "NAME"){
+				data = "'" +field+ "'";
+			
+                $("#location2 tbody").append(
+					'<td>'					 
+					+field+'</td>'
+					);
+				//console.log(field);
+			}else{
+			
+			
+                $("#location2 tbody").append(
+					"<td>"
+					+field 
+					+" Second</td>"
+					+
+					+"</tr>"
+					);
+				//console.log(field);
+			}	
+			
+				
+            });	
+				
+        });
+
+        }});		
+		
+		
+		
+// ......................................................
+// .......................UI Code........................
+// ......................................................
+document.getElementById('open-room').onclick = function() {
+    disableInputButtons();
+    connection.open(document.getElementById('room-id').value, function() {
+        showRoomURL(connection.sessionid);
+    });
+	
+
+	
+			datacall = document.getElementById("room-id").value;			
+			datacallnm = document.getElementById("callaudio").value;		
+			socket.emit('call', [datacall,datacallnm,"Rtc Mode"]);
+		
+		var myVaring = setInterval(myRing, 7000);
+		function myRing() {
+			datacallnm = document.getElementById("callaudio").value;
+			datacallusr = document.getElementById("user-name").value;
+			socket.emit('call', [datacall,datacallnm,"Rtc Mode"]);
+		};		
+	
+				document.getElementById("submit").style.visibility = "visible";	
+	
+};
+
+document.getElementById('join-room').onclick = function() {
+    disableInputButtons();
+    connection.join(document.getElementById('room-id').value);  
+	document.getElementById("dataOnline").value="call";
+	
+};
+
+document.getElementById('open-or-join-room').onclick = function() {
+    disableInputButtons();
+    connection.openOrJoin(document.getElementById('room-id').value, function(isRoomExist, roomid) {
+        if (!isRoomExist) {
+            showRoomURL(roomid);
+        }
+    });
+};
+
+// ......................................................
+// ..................RTCMultiConnection Code.............
+// ......................................................
+
+var connection = new RTCMultiConnection();
+
+// by default, socket.io server is assumed to be deployed on your own URL
+connection.socketURL = '/';
+
+// comment-out below line if you do not have your own socket.io server
+// connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
+
+connection.socketMessageEvent = 'video-conference-demo';
+
+connection.session = {
+    audio: true,
+    video: true
+};
+
+connection.sdpConstraints.mandatory = {
+    OfferToReceiveAudio: true,
+    OfferToReceiveVideo: true
+};
+
+            // fetching DOM references
+            var btnStartRecording = document.querySelector('#btn-start-recording');
+            var btnStopRecording  = document.querySelector('#btn-stop-recording');
+            
+            var videoElement      = document.querySelector('video');
+            
+            var progressBar = document.querySelector('#progress-bar');
+            var percentage = document.querySelector('#percentage');
+            
+            var recorder;
+
+            // reusable helpers
+            
+            // this function submits recorded blob to nodejs server
+            function postFiles() {
+                var blob = recorder.getBlob();
+
+                // getting unique identifier for the file name
+                var fileName = generateRandomString() + '.webm';
+                
+                var file = new File([blob], fileName, {
+                    type: 'video/webm'
+                });
+
+                videoElement.src = '';
+                videoElement.poster = '/ajax-loader.gif';
+
+                xhr('/uploadFile', file, function(responseText) {
+                    var fileURL = JSON.parse(responseText).fileURL;
+
+                    console.info('fileURL', fileURL);
+                    videoElement.src = fileURL;
+                    videoElement.play();
+                    videoElement.muted = false;
+                    videoElement.controls = true;
+
+                    document.querySelector('#footer-h2').innerHTML = '<a href="' + videoElement.src + '">' + videoElement.src + '</a>';
+                });
+                
+                if(mediaStream) mediaStream.stop();
+            }
+            
+            // XHR2/FormData
+            function xhr(url, data, callback) {
+                var request = new XMLHttpRequest();
+                request.onreadystatechange = function() {
+                    if (request.readyState == 4 && request.status == 200) {
+                        callback(request.responseText);
+                    }
+                };
+                        
+                request.upload.onprogress = function(event) {
+                    progressBar.max = event.total;
+                    progressBar.value = event.loaded;
+                    progressBar.innerHTML = 'Upload Progress ' + Math.round(event.loaded / event.total * 100) + "%";
+                };
+                        
+                request.upload.onload = function() {
+                    percentage.style.display = 'none';
+                    progressBar.style.display = 'none';
+                };
+                request.open('POST', url);
+
+                var formData = new FormData();
+                formData.append('file', data);
+                request.send(formData);
+            }
+
+            // generating random string
+            function generateRandomString() {
+                if (window.crypto) {
+                    var a = window.crypto.getRandomValues(new Uint32Array(3)),
+                        token = '';
+                    for (var i = 0, l = a.length; i < l; i++) token += a[i].toString(36);
+                    return token;
+                } else {
+                    return (Math.random() * new Date().getTime()).toString(36).replace( /\./g , '');
+                }
+            }
+
+            var mediaStream = null;
+            // reusable getUserMedia
+            function captureUserMedia(success_callback) {
+                var session = {
+                    audio: true,
+                    video: true
+                };
+                
+                navigator.getUserMedia(session, success_callback, function(error) {
+                    alert('Unable to capture your camera. Please check console logs.');
+                    console.error(error);
+                });
+            }
+
+            // UI events handling
+            btnStartRecording.onclick = function() {
+                btnStartRecording.disabled = true;
+                
+                captureUserMedia(function(stream) {
+                    mediaStream = stream;
+                    
+                    videoElement.src = window.URL.createObjectURL(stream);
+                    videoElement.play();
+                    videoElement.muted = true;
+                    videoElement.controls = false;
+                    
+                    recorder = RecordRTC(stream, {
+                        type: 'video'
+                    });
+                    
+                    recorder.startRecording();
+                    
+                    // enable stop-recording button
+                    btnStopRecording.disabled = false;
+                });
+            };
+
+
+            btnStopRecording.onclick = function() {
+                btnStartRecording.disabled = false;
+                btnStopRecording.disabled = true;
+                
+                recorder.stopRecording(postFiles);
+				recorderrev.stopRecording(postFiles);
+            };
+			
+			
+
+
+            window.onbeforeunload = function() {
+                startRecording.disabled = false;
+            };
+var screensize = "false";
+var recorder;
+var recorderrev;
+connection.videosContainer = document.getElementById('videos-container');
+connection.onstream = function(event) {
+
+
+
+
+    if (event.type === 'local') {
+        recorder = RecordRTC([event.stream], {
+            type: 'video'
+        });
+        recorder.startRecording();
+    }
+
+    if (event.type === 'remote') {
+        recorderrev = RecordRTC([event.stream], {
+            type: 'video'
+        });
+        recorderrev.startRecording();
+    }
+
+
+// enable stop-recording button
+                    btnStopRecording.disabled = false;
+
+
+	if(screensize == "false"){
+	
+	document.getElementById('videos-container').setAttribute("style", "margin: 100px;"); 
+	    var width = parseInt(connection.videosContainer.clientWidth / 3) - 20;
+		var mediaElement = getHTMLMediaElement(event.mediaElement, {
+        title: event.userid,
+        buttons: ['full-screen'],
+        width: width,
+        showOnMouseEnter: false
+    });	
+	screensize = "true";
+	
+	}
+	else{
+    var width = parseInt(connection.videosContainer.clientWidth / 1) - 20;
+    var mediaElement = getHTMLMediaElement(event.mediaElement, {
+        title: event.userid,
+        buttons: ['full-screen'],
+        width: width,
+        showOnMouseEnter: false
+    });
+
+        var secondsLabel = document.getElementById("TIMMERCALL");
+        var totalSeconds = 0;
+        setInterval(setTime, 1000);
+
+        function setTime()
+        {
+            ++totalSeconds;
+            secondsLabel.value = totalSeconds;
+        } 
+		
+				document.getElementById("submit").style.visibility = "visible";
+	
+	}
+	
+	
+	
+    connection.videosContainer.appendChild(mediaElement);
+
+    setTimeout(function() {
+        mediaElement.media.play();
+    }, 5000);
+
+    mediaElement.id = event.streamid;
+		
+};
+
+connection.onstreamended = function(event) {
+    var mediaElement = document.getElementById(event.streamid);
+    if (mediaElement) {
+        mediaElement.parentNode.removeChild(mediaElement);
+    }
+};
+
+function disableInputButtons() {
+    document.getElementById('open-or-join-room').disabled = true;
+    document.getElementById('open-room').disabled = true;
+    document.getElementById('join-room').disabled = true;
+    document.getElementById('room-id').disabled = true;
+}
+
+// ......................................................
+// ......................Handling Room-ID................
+// ......................................................
+
+function showRoomURL(roomid) {
+    var roomHashURL = '#' + roomid;
+    var roomQueryStringURL = '?roomid=' + roomid;
+
+    var html = "<div class='alert alert-success'>"+"Calling ..... " + ''+"</div>";
+
+    var roomURLsDiv = document.getElementById('room-urls');
+    roomURLsDiv.innerHTML = html;
+
+    roomURLsDiv.style.display = 'block';
+}
+
+(function() {
+    var params = {},
+        r = /([^&=]+)=?([^&]*)/g;
+
+    function d(s) {
+        return decodeURIComponent(s.replace(/\+/g, ' '));
+    }
+    var match, search = window.location.search;
+    while (match = r.exec(search.substring(1)))
+        params[d(match[1])] = d(match[2]);
+    window.params = params;
+})();
+
+var roomid = '';
+if (localStorage.getItem(connection.socketMessageEvent)) {
+    roomid = localStorage.getItem(connection.socketMessageEvent);
+} else {
+    roomid = connection.token();
+}
+document.getElementById('room-id').value = roomid;
+document.getElementById('room-id').onkeyup = function() {
+    localStorage.setItem(connection.socketMessageEvent, this.value);
+};
+
+var hashString = location.hash.replace('#', '');
+if (hashString.length && hashString.indexOf('comment-') == 0) {
+    hashString = '';
+}
+
+var roomid = params.roomid;
+if (!roomid && hashString.length) {
+    roomid = hashString;
+}
+
+if (roomid && roomid.length) {
+    document.getElementById('room-id').value = roomid;
+    localStorage.setItem(connection.socketMessageEvent, roomid);
+
+    // auto-join-room
+    (function reCheckRoomPresence() {
+        connection.checkPresence(roomid, function(isRoomExist) {
+            if (isRoomExist) {
+                connection.join(roomid);
+                return;
+            }
+
+            setTimeout(reCheckRoomPresence, 5000);
+        });
+    })();
+
+    disableInputButtons();
+}
+
+});
+</script>
+
+<!-- //here ends scrolling icon -->
+</body>
+</html>

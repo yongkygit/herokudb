@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>Areleo</title>
+<!-- custom-theme -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- custom layout for HTML5 audio/video elements -->
+	<link rel="stylesheet" href="/dev/getHTMLMediaElement.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/areleo/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/areleo/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="/areleo/js/jquery-3.1.1.slim.min.js"></script>
+    <script src="/areleo/js/tether.min.js"></script>
+    <script src="/areleo/js/bootstrap.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- //font-awesome-icons -->
+
+  
+
+  
+  <link rel="shortcut icon" href="/demos/logo.png">
+  <style>
+  body {
+    color: #f3eded;
+  }
+  </style>
+  
+
+  
+</head>
+<body>
+<div class="container">
+  <nav class="navbar navbar-toggleable-md navbar-light navbar-head">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="/"><img src="/areleo/images/logo_areleo.png" width="35px" height = "35px"alt="Areleo"></a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/rtc">Rtc</a>
+      </li>	  
+      <li class="nav-item">
+        <a class="nav-link" href="/visualassistant">Visual Assistant</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/chatsharing">Chat Sharing</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</div>
+
+
+<div class="menu-areleo-main"> 
+<div class="container">
+  <div class="row">
+    <div class="col col-lg-3">
+      			<div class="col col-lg-12">
+				<a href="/create">
+					<div class="btn-plus">
+						<i class="fa fa-user-plus" aria-hidden="true"></i>
+					</div>
+				</a>
+				<button type="button" align= "center" class="btn-circle" data-toggle="modal" data-target="#myModalcall"><i class="fa fa-address-book" aria-hidden="true"></i></button>
+
+				<div id= "server-on" class="btn-on"><i class="fa fa-podcast" aria-hidden="true"></i></div>
+				</div>
+    </div>
+    <div class="col col-lg-7">
+
+			<br>
+			<br>
+			<br>
+
+  <!-- Trigger the modal with a button -->
+  
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModalcall" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" style="color: Coral;" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Call log</h4>
+        </div>
+        <div class="modal-body">
+		
+					<table id="location1" class="table" style="color:#00001a;">
+					<thead>
+					  <tr align ="center">
+						<th>NAME</th>
+						<th style="color:#00001a;">TIME</th>
+					  </tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+					</table>
+        </div>
+        <div class="modal-footer">
+         
+        </div>
+      </div>
+    </div>
+  </div>
+				
+				
+				
+
+					
+					<br>
+  <div class="form-group">
+
+		<input class="form-control" type="hidden" id="callaudio" >
+		<input class="form-control" type="hidden" id="user-name" placeholder= "user id">
+  </div>
+
+				
+				<p id="textcalling"></p>
+				<p id="ringMode" style="color:red;"></p>
+
+				
+	<input type="hidden" id="dataOnline" value="notcall">			
+    <input type="hidden" id="room-id" value="abcdef" autocorrect=off autocapitalize=off size=20>
+    <button style="color: #fffff;background: #3BCF15;border-radius: 25px 25px 25px 25px;border-color: #2D9B11;" class="btn btn-info btn-md" id="open-room"><i class="fa fa-phone" aria-hidden="true"></i> Calling</button>
+    <button style="color: #fffff;background: #3FDB18;border-radius: 25px 25px 25px 25px;border-color: #2C9212;" class="btn btn-info btn-md" id="join-room"><i class="fa fa-volume-control-phone" aria-hidden="true"></i> Accept</button>
+	<button style="color: #fffff;background: #ff471a;border-radius: 25px 25px 25px 25px;border-color: #CA3C19;" class="btn btn-info btn-md" id="submit" ><i class="fa fa-phone-square" aria-hidden="true"></i> Close</button>
+								
+	<input type="hidden" id="TIMMERCALL" placeholder=""><br>
+
+    <div style="color: #251F1D;" id="open-or-join-room"></div>
+
+    <div id="room-urls"  align="center" ></div>
+
+    <div id="videos-container"></div>
+  
+
+
+
+	</div>
+    <div class="col col-lg-2">
+      
+    </div>
+	
+  </div>
+</div> 
+</div>
+
+
+
+
+<div class="menu-areleo-main"> 
+<div class="container">
+  <div class="row">
+    <div class="col col-lg-2">
+
+    </div>
+    <div class="col col-lg-10">
+	<br>
+	<h3> Record </h3>
+	<br>
+        <section class="experiment">
+            <div id="container"></div>
+        </section>						
+  
+        <section class="" style="padding: 5px;">
+            <label for="time-interval">Time Interval (milliseconds):</label>
+            <input type="text" id="time-interval" value="5000">ms
+
+            <button id="start-recording">Start</button>
+            <button id="stop-recording" disabled>Stop</button>
+
+            <button id="pause-recording" disabled>Pause</button>
+            <button id="resume-recording" disabled>Resume</button>
+			
+			<button id="add-stream" disabled>Add another video</button>
+        </section>
+	</div>
+    <div class="col col-lg-1">
+      
+    </div>
+	
+  </div>
+</div> 
+</div>
+		
+		
+		
+<div class="menu-areleo-footer"> 
+<div class="container">
+  <div class="row">
+    <div class="col col-lg-4">
+	<div class="footer_griph">
+    <i class="fa fa-map-marker"></i>
+    </div>
+	<div class="footer-center">
+	<p>Pusat Bisnis Thamrin City, Lt. 7 <span>JI. Thamrin Boulevard (Kebon Kacang Raya)</span><span>Jakarta Pusat 10230 Indonesia</span></p>
+	</div>
+	</div>
+    <div class="col col-lg-4">
+	
+	<div class="footer_griph">
+    <i class="fa fa-phone-square"></i>
+    </div>
+	<div class="footer-center">
+	<p>Phone:+62 21 29558688  <span>Fax: +62 21 2955 8690</span></p>
+	</div>
+    </div>
+    <div class="col col-lg-4">
+    <div class="footer_griph">
+    <i class="fa fa-envelope-o"></i>
+    </div> 
+	<div class="footer-center">
+	<p><a href="mailto:support@areleo.com">support@areleo.com</a></p>
+	</div>	
+    </div>
+  </div>
+</div>
+</div>		
+		
+		
+
+<script src="dist/RTCMultiConnection.min.js"></script>
+     <script src="https://cdn.WebRTC-Experiment.com/MediaStreamRecorder.js"></script>
+<script src="dev/adapter.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+
+
+<script src="/dev/getHTMLMediaElement.js"></script>
+
+
+<script>
+
+
+
+
+$(document).ready(function(){
+
+	  
+        var NAME,TIMMERCALL;
+        $("#submit").click(function(){
+          NAME=$("#room-id").val();
+          TIMMERCALL=$("#TIMMERCALL").val();
+		  
+  
+  
+ $.post( "http://localhost:9001/timer", {NAME: NAME,TIMMERCALL: TIMMERCALL})
+  .done(function( data ) {
+    
+  }); 
+  alert( "Data Loaded: " );
+  window.location.reload();
+  
+        });
+  
+	var socket = io.connect();
+	var $message = '#f90606';
+	
+
+   
+
+    
+        $.ajax({url: "/calllog", success: function(result){
+		console.log(result);
+
+		$.each(result, function(i, j){
+		
+			$.each(j, function(k, field){
+			if(k == "_id"){
+					$("#location1 tbody").append(
+					'<tr>'
+					+''
+					+field 
+					+''
+					);
+			}
+			else if(k == "NAME"){
+				data = "'" +field+ "'";
+			
+                $("#location1 tbody").append(
+					'<td>'					 
+					+field+'</td>'
+					);
+				//console.log(field);
+			}else{
+			
+			
+                $("#location1 tbody").append(
+					"<td>"
+					+field 
+					+"</td>"
+					+
+					+"</tr>"
+					);
+				//console.log(field);
+			}	
+			
+				
+            });	
+				
+        });
+
+        }});
+		
+
+
+
+
+});
+</script>
+
+<!-- //here ends scrolling icon -->
+</body>
+</html>

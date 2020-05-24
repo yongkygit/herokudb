@@ -1,0 +1,33 @@
+{
+  "name": "rtcmaster",
+  "version": "1.0.0",
+  "description": "<a href=\"https://github.com/muaz-khan/RTCMultiConnection\"><img src=\"https://i.imgur.com/MFfRBSM.png\" /></a>",
+  "main": "Gruntfile.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "express-session": "^1.15.5",
+    "mongodb": "^2.2.31",
+	"wav": "^1.0.1",
+    "socket.io": "latest"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yongkygit/areleotest.git"
+  },
+  "keywords": [],
+  "author": "yongky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yongkygit/areleotest/issues"
+  },
+  "homepage": "https://github.com/yongkygit/areleotest#readme"
+}

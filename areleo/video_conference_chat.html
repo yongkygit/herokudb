@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" data-textdirection="ltr" class="loading">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="Stack admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, stack admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
+    <title>areleo / session history</title>
+    <link rel="apple-touch-icon" href="../../app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <!-- BEGIN VENDOR CSS-->
+    <link rel="stylesheet" type="text/css" href="../../app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../app-assets/fonts/feather/style.min.css">
+    <link rel="stylesheet" type="text/css" href="../../app-assets/fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../app-assets/fonts/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" type="text/css" href="../../app-assets/vendors/css/extensions/pace.css">
+    <link rel="stylesheet" type="text/css" href="../../app-assets/vendors/css/pickers/daterange/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="../../app-assets/vendors/css/pickers/datetime/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" type="text/css" href="../../app-assets/vendors/css/pickers/pickadate/pickadate.css">
+    <!-- END VENDOR CSS-->
+    <!-- BEGIN STACK CSS-->
+    <link rel="stylesheet" type="text/css" href="../../app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="../../app-assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="../../app-assets/css/colors.css">
+    <!-- END STACK CSS-->
+    <!-- BEGIN Page Level CSS-->
+    <link rel="stylesheet" type="text/css" href="../../app-assets/css/core/menu/menu-types/vertical-overlay-menu.css">
+    <link rel="stylesheet" type="text/css" href="../../app-assets/css/core/menu/menu-types/vertical-overlay-menu.css">
+    <link rel="stylesheet" type="text/css" href="../../app-assets/fonts/simple-line-icons/style.min.css">
+    <link rel="stylesheet" type="text/css" href="../../app-assets/css/plugins/pickers/daterange/daterange.css">
+    <!-- END Page Level CSS-->
+    <!-- BEGIN Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+    <!-- END Custom CSS-->
+  </head>
+  <body data-open="click" data-menu="vertical-overlay-menu" data-col="1-column" class="vertical-layout vertical-overlay-menu 1-column   menu-expanded fixed-navbar">
+
+    <!-- navbar-fixed-top-->
+    <nav class="header-navbar navbar navbar-with-menu navbar-fixed-top navbar-dark bg-primary navbar-shadow navbar-brand-center">
+		<div class="navbar-wrapper">
+			<div class="navbar-header">
+				<ul class="nav navbar-nav">
+					<li class="nav-item mobile-menu hidden-md-up float-xs-left"><a href="#" class="nav-link nav-menu-main menu-toggle hidden-xs"><i class="ft-menu font-large-1"></i></a></li>
+					<li class="nav-item"><a href="index.html" class="navbar-brand"><img alt="stack admin logo" src="assets/logo_light.png" class="brand-logo" width=80% height=80%></a></li>
+					<li class="nav-item hidden-md-up float-xs-right"><a data-toggle="collapse" data-target="#navbar-mobile" class="nav-link open-navbar-container"><i class="fa fa-ellipsis-v"></i></a></li>
+				</ul>
+			</div>
+			<div class="navbar-container content container-fluid">
+				<div id="navbar-mobile" class="collapse navbar-toggleable-sm">
+					<ul class="nav navbar-nav">
+						<li class="nav-item hidden-sm-down"><a href="#" class="nav-link nav-menu-main menu-toggle hidden-xs"><i class="ft-menu"></i></a></li>
+						
+						<li class="dropdown dropdown-notification nav-item">
+							<a href="contact.html" data-toggle="dropdown" class="nav-link nav-link-label"><i class="ficon ft-users"></i><!--span class="tag tag-pill tag-default tag-danger tag-default tag-up">5</span--></a>
+						</li>
+						
+						<li class="dropdown dropdown-notification nav-item">
+							<a href="video_conference_call.html" data-toggle="dropdown" class="nav-link nav-link-label"><i class="ficon ft-video"></i><!--span class="tag tag-pill tag-default tag-danger tag-default tag-up">5</span--></a>
+						</li>
+						
+						<li class="dropdown dropdown-notification nav-item">
+							<a href="video_conference_chat.html" data-toggle="dropdown" class="nav-link nav-link-label"><i class="ficon ft-message-circle"></i></a>
+						</li>
+					
+						<li class="dropdown dropdown-notification nav-item">
+							<a href="video_conference_draw.html" data-toggle="dropdown" class="nav-link nav-link-label" title="draw"><i class="ficon ft-edit-2"></i><!--span class="tag tag-pill tag-default tag-danger tag-default tag-up">5</span--></a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav float-xs-right">
+						<li class="nav-item hidden-sm-down"><a href="#" class="nav-link nav-link-expand"><i class="ficon ft-wifi-off" style="color:red;"></i></a></li>
+						<!--li class="nav-item hidden-sm-down"><a href="#" class="nav-link nav-link-expand"><i class="ficon ft-wifi" style="color:green;"></i></a></li-->
+						
+						<li class="dropdown dropdown-user nav-item">
+							<a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link dropdown-user-link"><span class="avatar avatar-online"><img src="../../app-assets/images/portrait/small/avatar-s-1.png" alt="avatar"></span><span class="user-name">John Doe</span></a>
+							<div class="dropdown-menu dropdown-menu-right">
+								<a href="#" class="dropdown-item"><i class="ft-user"></i> Edit Profile</a>
+								<div class="dropdown-divider"></div>
+								<a href="#" class="dropdown-item"><i class="ft-power"></i> Logout</a>
+							</div>
+						</li>
+						
+						<li class="nav-item hidden-sm-down"><a href="#" class="nav-link nav-link-expand"><i class="ficon ft-maximize"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+
+
+    <!-- main menu-->
+    <div class="main-menu menu-light menu-accordion menu-shadow menu-border">
+      <!-- main menu header-->
+      <!-- include includes/menu-header-->
+      <!-- / main menu header-->
+      <!-- main menu content-->
+      <div class="main-menu-content">
+        <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main">
+          <li class=" navigation-header"><span>Services</span><i data-toggle="tooltip" data-placement="right" data-original-title="General" class=" ft-minus"></i>
+          </li>
+          <li class=" nav-item"><a href="video_conference.html"><i class="ft-home"></i><span data-i18n="" class="menu-title">Home</span></a>
+          </li>	
+          <li class=" nav-item"><a href="video_conference.html"><i class="ft-monitor"></i><span data-i18n="" class="menu-title">Video Conference</span></a></li>
+          <li class=" nav-item"><a href="schedule.html"><i class="ft-calendar"></i><span data-i18n="" class="menu-title">Schedule</span></a></li>
+          <li class=" nav-item"><a href="report.html"><i class="ft-activity"></i><span data-i18n="" class="menu-title">Report</span></a></li>
+        </ul>
+      </div>
+      <!-- /main menu content-->
+      <!-- main menu footer-->
+      <!-- include includes/menu-footer-->
+      <!-- main menu footer-->
+    </div>
+    <!-- / main menu-->
+	
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+    <div class="app-content content container-fluid">
+      <div class="content-wrapper">
+        <div class="content-header row">
+          <div class="content-header-left col-md-6 col-xs-12 mb-2">
+            <h3 class="content-header-title mb-0" style="color:#ffff00">Chat</h3>
+          </div>
+        </div>
+        <div class="content-body">
+			
+			<section id="columns">
+				<div class="row">
+					<div class="col-md-4 col-offset-4">
+						<section id="description" class="card">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title">
+										<fieldset class="form-group position-relative mb-0">
+											<input type="text" class="form-control form-control-lg input-lg" id="iconLeft" placeholder="Seacrh Contact">
+											<div class="form-control-position">
+												<i class="ft-search font-medium-4"></i>
+											</div>
+										</fieldset>
+									</h5>
+								</div>
+									<div class="card-block">											
+										<div class="row">
+											<div class="col-md-1"><span class="avatar avatar-online"><img src="../../app-assets/images/portrait/small/avatar-s-1.png" alt="avatar"></span></div>
+											<div class="col-md-3"><h5>John Doe</h5></div>
+											<div class="col-md-6"><h5>+62 8123 4567</h5></div>
+											<div class="col-md-2">
+												<i class="ft-message-circle icon-bg-circle pull-right" style="background-color:blue;"></i>
+											</div>
+										</div>
+										<hr>		
+										
+										<div class="row">
+											<div class="col-md-1"><span class="avatar avatar-online"><img src="../../app-assets/images/portrait/small/avatar-s-1.png" alt="avatar"></span></div>
+											<div class="col-md-3"><h5>John Doe</h5></div>
+											<div class="col-md-6"><h5>+62 8123 4567</h5></div>
+											<div class="col-md-2">
+												<i class="ft-message-circle icon-bg-circle pull-right" style="background-color:blue;"></i>
+											</div>
+										</div>
+										<hr>		
+										
+										<div class="row">
+											<div class="col-md-1"><span class="avatar avatar-online"><img src="../../app-assets/images/portrait/small/avatar-s-1.png" alt="avatar"></span></div>
+											<div class="col-md-3"><h5>John Doe</h5></div>
+											<div class="col-md-6"><h5>+62 8123 4567</h5></div>
+											<div class="col-md-2">
+												<i class="ft-message-circle icon-bg-circle pull-right" style="background-color:blue;"></i>
+											</div>
+										</div>
+										<hr>		
+										
+										<div class="row">
+											<div class="col-md-1"><span class="avatar avatar-online"><img src="../../app-assets/images/portrait/small/avatar-s-1.png" alt="avatar"></span></div>
+											<div class="col-md-3"><h5>John Doe</h5></div>
+											<div class="col-md-6"><h5>+62 8123 4567</h5></div>
+											<div class="col-md-2">
+												<i class="ft-message-circle icon-bg-circle pull-right" style="background-color:blue;"></i>
+											</div>
+										</div>
+										<hr>		
+										
+										<div class="row">
+											<div class="col-md-1"><span class="avatar avatar-online"><img src="../../app-assets/images/portrait/small/avatar-s-1.png" alt="avatar"></span></div>
+											<div class="col-md-3"><h5>John Doe</h5></div>
+											<div class="col-md-6"><h5>+62 8123 4567</h5></div>
+											<div class="col-md-2">
+												<i class="ft-message-circle icon-bg-circle pull-right" style="background-color:blue;"></i>
+											</div>
+										</div>
+										<hr>		
+										
+										<div class="row">
+											<div class="col-md-1"><span class="avatar avatar-online"><img src="../../app-assets/images/portrait/small/avatar-s-1.png" alt="avatar"></span></div>
+											<div class="col-md-3"><h5>John Doe</h5></div>
+											<div class="col-md-6"><h5>+62 8123 4567</h5></div>
+											<div class="col-md-2">
+												<i class="ft-message-circle icon-bg-circle pull-right" style="background-color:blue;"></i>
+											</div>
+										</div>
+									</div>
+								
+							</div>
+						</section>
+					</div>
+					
+					<!-- Kalo UDAH VidCall-->
+					<div class="col-md-8">
+						<section id="description" class="card">
+							<div class="card">
+								
+							 <div class="content-body">
+								<div class="card-block">
+									<section class="chat-app-window">
+										<div class="tag tag-default mb-1">Chat History</div>
+										<div class="chats">
+											<div class="chats">
+												<div class="chat">
+													<div class="chat-avatar">
+														<a class="avatar" data-toggle="tooltip" href="#" data-placement="right" title="" data-original-title="">
+														<img src="../../../app-assets/images/portrait/small/avatar-s-1.png" alt="avatar" />
+														</a>
+													</div>
+													<div class="chat-body">
+														<div class="chat-content">
+															<p>How can we help? We're here for you!</p>
+														</div>
+													</div>
+												</div>
+												<div class="chat chat-left">
+													<div class="chat-avatar">
+														<a class="avatar" data-toggle="tooltip" href="#" data-placement="left" title="" data-original-title="">
+														<img src="../../../app-assets/images/portrait/small/avatar-s-7.png" alt="avatar" />
+														</a>
+													</div>
+													<div class="chat-body">
+														<div class="chat-content">
+															<p>Hey John,  I am looking for the best admin template.</p>
+															<p>Could you please help me to find it out?</p>
+														</div>
+														<div class="chat-content">
+															<p>It should be Bootstrap 4 compatible.</p>
+														</div>
+													</div>
+												</div>
+												<div class="chat">
+													<div class="chat-avatar">
+														<a class="avatar" data-toggle="tooltip" href="#" data-placement="right" title="" data-original-title="">
+														<img src="../../../app-assets/images/portrait/small/avatar-s-1.png" alt="avatar" />
+														</a>
+													</div>
+													<div class="chat-body">
+														<div class="chat-content">
+															<p>Absolutely!</p>
+														</div>
+														<div class="chat-content">
+															<p>Stack admin is the responsive bootstrap 4 admin template.</p>
+														</div>
+													</div>
+												</div>
+												<p class="time">1 hours ago</p>
+												<div class="chat chat-left">
+													<div class="chat-avatar">
+														<a class="avatar" data-toggle="tooltip" href="#" data-placement="left" title="" data-original-title="">
+														<img src="../../../app-assets/images/portrait/small/avatar-s-7.png" alt="avatar" />
+														</a>
+													</div>
+													<div class="chat-body">
+														<div class="chat-content">
+															<p>Looks clean and fresh UI.</p>
+														</div>
+														<div class="chat-content">
+															<p>It's perfect for my next project.</p>
+														</div>
+														<div class="chat-content">
+															<p>How can I purchase it?</p>
+														</div>
+													</div>
+												</div>
+												<div class="chat">
+													<div class="chat-avatar">
+														<a class="avatar" data-toggle="tooltip" href="#" data-placement="right" title="" data-original-title="">
+														<img src="../../../app-assets/images/portrait/small/avatar-s-1.png" alt="avatar" />
+														</a>
+													</div>
+													<div class="chat-body">
+														<div class="chat-content">
+															<p>Thanks, from ThemeForest.</p>
+														</div>
+													</div>
+												</div>
+												<div class="chat chat-left">
+													<div class="chat-avatar">
+														<a class="avatar" data-toggle="tooltip" href="#" data-placement="left" title="" data-original-title="">
+														<img src="../../../app-assets/images/portrait/small/avatar-s-7.png" alt="avatar" />
+														</a>
+													</div>
+													<div class="chat-body">
+														<div class="chat-content">
+															<p>I will purchase it for sure.</p>
+														</div>
+														<div class="chat-content">
+															<p>Thanks.</p>
+														</div>
+													</div>
+												</div>
+												<div class="chat">
+													<div class="chat-avatar">
+														<a class="avatar" data-toggle="tooltip" href="#" data-placement="right" title="" data-original-title="">
+														<img src="../../../app-assets/images/portrait/small/avatar-s-1.png" alt="avatar" />
+														</a>
+													</div>
+													<div class="chat-body">
+														<div class="chat-content">
+															<p>Great, Feel free to get in touch on</p>
+														</div>
+														<div class="chat-content">
+															<p>https://pixinvent.ticksy.com/</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+									<section class="chat-app-form">
+										<form class="chat-app-input">
+											<fieldset class="form-group position-relative has-icon-left col-xs-10 m-0">
+												<div class="form-control-position">
+													<i class="icon-emoticon-smile"></i>
+												</div>
+												<input type="text" class="form-control" id="iconLeft4" placeholder="Type your message">
+												<div class="form-control-position control-position-right">
+													<i class="ft-image"></i>
+												</div>
+											</fieldset>
+											<fieldset class="form-group position-relative has-icon-left col-xs-2 m-0">
+												<button type="button" class="btn btn-primary"><i class="fa fa-paper-plane-o hidden-lg-up"></i> <span class="hidden-md-down">Send</span></button>
+											</fieldset>
+										</form>
+									</section>
+								</div>
+							</div> 
+								
+							</div>
+						</section>
+					</div>
+					
+					<!-- Kalo BELUM VidCall-->
+					<!--div class="col-md-8">
+						<section id="description" class="card">
+							<div class="card">
+									<div class="card-block">											
+										<h1>Hi, John Doe</h1>
+										<h3>Get started by calling a friend.</h3>
+									</div>
+							</div>
+						</section>
+					</div-->
+					
+				</div>
+			</section>	
+			
+        </div>
+      
+	  
+	  </div>
+    </div>
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+
+
+    <footer class="footer footer-static footer-transparent">
+      <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2"><span class="float-md-left d-xs-block d-md-inline-block">Copyright  &copy; 2017 <a href="https://areleo.com" target="_blank" class="text-bold-800 grey darken-2">areleo </a>, All rights reserved. </span></p>
+    </footer>
+
+    <!-- BEGIN VENDOR JS-->
+    <script src="../../app-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
+    <!-- BEGIN VENDOR JS-->
+    <!-- BEGIN PAGE VENDOR JS-->
+    <script src="../../app-assets/vendors/js/ui/prism.min.js" type="text/javascript"></script>
+    <script src="../../app-assets/vendors/js/pickers/dateTime/moment-with-locales.min.js" type="text/javascript"></script>
+    <script src="../../app-assets/vendors/js/pickers/dateTime/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+    <script src="../../app-assets/vendors/js/pickers/pickadate/picker.js" type="text/javascript"></script>
+    <script src="../../app-assets/vendors/js/pickers/pickadate/picker.date.js" type="text/javascript"></script>
+    <script src="../../app-assets/vendors/js/pickers/pickadate/picker.time.js" type="text/javascript"></script>
+    <script src="../../app-assets/vendors/js/pickers/pickadate/legacy.js" type="text/javascript"></script>
+    <script src="../../app-assets/vendors/js/pickers/daterange/daterangepicker.js" type="text/javascript"></script>
+    <!-- END PAGE VENDOR JS-->
+    <!-- BEGIN STACK JS-->
+    <script src="../../app-assets/js/core/app-menu.js" type="text/javascript"></script>
+    <script src="../../app-assets/js/core/app.js" type="text/javascript"></script>
+    <!-- END STACK JS-->
+    <!-- BEGIN PAGE LEVEL JS-->
+    <script src="../../app-assets/js/scripts/pickers/dateTime/picker-date-time.js" type="text/javascript"></script>
+    <script src="../../app-assets/js/scripts/pages/chat-application.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL JS-->
+  </body>
+</html>
