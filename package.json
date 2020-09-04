@@ -13,7 +13,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "formidable": "^1.2.2",
-    "mongodb": "^2.2.36",
+    "mongodb": "^3.1.13",
     "recordrtc": "^5.5.9",
     "socket.io": "^2.3.0",
     "wav": "^1.0.2"
